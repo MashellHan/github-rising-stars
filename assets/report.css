@@ -441,7 +441,7 @@ li {
     }
     
     .menu-toggle {
-        display: flex;
+        display: flex !important;
     }
     
     .report-header h1 {
@@ -491,7 +491,7 @@ li {
 }
 
 .menu-toggle {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 16px;
     left: 16px;
