@@ -3,498 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub 新星速报 | 2026-03-16</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/style.css">
+    <title>5个GitHub新星项目速报！Trump-Code、Understand-Anything等火爆开源</title>
+    <link rel="stylesheet" href="../../assets/wechat-style.css">
 </head>
 <body>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰ 历史</button>
-    
-    <div class="app-container">
-        <!-- Sidebar -->
-        <nav class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <span>🌟</span> GitHub Rising Stars
-                </div>
-            </div>
-            <div class="nav-section">
-                <h3>历史报告</h3>
-                <ul class="nav-list" id="nav-list"></ul>
-            </div>
-        </nav>
+    <article>
+        <!-- Header -->
+        <header class="article-header">
+            <h1>5个GitHub新星项目速报！Trump-Code、Understand-Anything等火爆开源</h1>
+            <p class="meta">
+                <a href="https://mashellhan.github.io/github-rising-stars/">GitHub新星速报</a> · 2026年3月16日
+            </p>
+        </header>
         
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Breadcrumb -->
-            <div class="breadcrumb">
-                <a href="../../index.html">首页</a>
-                <span>/</span>
-                <span>2026-03-16</span>
+        <!-- Introduction -->
+        <p><strong>Neo整理</strong></p>
+        <p>每天凌晨，我会自动扫描GitHub Trending，筛选出<strong>60天内创建、增长最快的高潜力项目</strong>，计算"新星指数"（周增长/√总Star），为你发现下一个可能爆发的开源项目。</p>
+        <p>今天发现了<strong>5个新星项目</strong>，涵盖AI编程、金融科技、代码理解等热门领域。让我们一起来看看！</p>
+        
+        <!-- TOC -->
+        <div class="toc">
+            <h3>📑 今日新星榜</h3>
+            <ul>
+                <li><a href="#trump-code">🥇 sstklen/trump-code</a> <span class="stars">⭐198 | 指数98</span></li>
+                <li><a href="#understand-anything">🥈 Lum1104/Understand-Anything</a> <span class="stars">⭐188 | 指数96</span></li>
+                <li><a href="#collab">🥉 collaborator-ai/collab-public</a> <span class="stars">⭐217 | 指数95</span></li>
+                <li><a href="#translate-book">4️⃣ deusyu/translate-book</a> <span class="stars">⭐198 | 指数88</span></li>
+                <li><a href="#opensquirrel">5️⃣ Infatoshi/OpenSquirrel</a> <span class="stars">⭐362 | 指数82</span></li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <!-- Project 1: Trump-Code -->
+        <section id="trump-code">
+            <div class="section-title">
+                <span class="section-number">"01"</span>
+                <h2>Trump-Code：AI解码川普推文×美股关联</h2>
             </div>
             
-            <!-- Page Header -->
-            <div class="page-header">
-                <h1>🌟 GitHub 新星速报</h1>
-                <p class="subtitle">2026年3月16日 · 发现 5 个高潜力爆发项目</p>
+            <div class="stats-inline">
+                <span class="stat">⭐ 198 Stars</span>
+                <span class="stat">📈 指数 98.0</span>
+                <span class="stat">🔧 Python</span>
             </div>
             
-            <!-- Content Grid -->
-            <div class="content-grid">
-                <!-- Left Column -->
-                <div class="main-column">
-                    <!-- TOC -->
-                    <div class="toc">
-                        <h2>📑 今日新星榜</h2>
-                        <div class="toc-grid">
-                            <a href="#trump-code" class="toc-item">
-                                <span class="toc-rank">🥇</span>
-                                <div class="toc-info">
-                                    <h3>sstklen/trump-code</h3>
-                                    <span class="stars">⭐ 198</span>
-                                    <span class="index">指数 98.0</span>
-                                </div>
-                            </a>
-                            <a href="#understand-anything" class="toc-item">
-                                <span class="toc-rank">🥈</span>
-                                <div class="toc-info">
-                                    <h3>Lum1104/Understand-Anything</h3>
-                                    <span class="stars">⭐ 188</span>
-                                    <span class="index">指数 96.0</span>
-                                </div>
-                            </a>
-                            <a href="#collab" class="toc-item">
-                                <span class="toc-rank">🥉</span>
-                                <div class="toc-info">
-                                    <h3>collaborator-ai/collab-public</h3>
-                                    <span class="stars">⭐ 217</span>
-                                    <span class="index">指数 95.0</span>
-                                </div>
-                            </a>
-                            <a href="#translate-book" class="toc-item">
-                                <span class="toc-rank">4️⃣</span>
-                                <div class="toc-info">
-                                    <h3>deusyu/translate-book</h3>
-                                    <span class="stars">⭐ 198</span>
-                                    <span class="index">指数 88.0</span>
-                                </div>
-                            </a>
-                            <a href="#opensquirrel" class="toc-item">
-                                <span class="toc-rank">5️⃣</span>
-                                <div class="toc-info">
-                                    <h3>Infatoshi/OpenSquirrel</h3>
-                                    <span class="stars">⭐ 362</span>
-                                    <span class="index">指数 82.0</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 1: Trump-Code -->
-                    <section class="project-section" id="trump-code">
-                        <div class="project-header">
-                            <div class="project-title">
-                                <h2><span class="emoji">🥇</span> Trump-Code</h2>
-                                <p class="repo"><a href="https://github.com/sstklen/trump-code">sstklen/trump-code</a></p>
-                            </div>
-                            <div class="project-stats">
-                                <span class="stat stars">⭐ 198</span>
-                                <span class="stat">📊 指数 98.0</span>
-                                <span class="stat">🔧 Python</span>
-                            </div>
-                        </div>
-                        
-                        <div class="demo-media">
-                            <img src="images/trump-code-demo.gif" alt="Trump-Code Demo">
-                            <div class="caption">🎬 Demo: Dashboard 实时展示</div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>📌 项目简介</h3>
-                            <p><strong>Trump-Code</strong> 是一个创新性的金融科技项目，通过 AI 技术解码川普的社交媒体发言，分析其与美股波动的潜在关联。项目提供实时 Dashboard，让投资者直观观察言论与市场反应的时间线对比。</p>
-                            
-                            <div class="highlight-box">
-                                <h4>💡 核心价值</h4>
-                                <p>在信息驱动的金融市场中，重要人物发言可能引发市场剧烈波动。Trump-Code 通过 AI 情感分析和事件提取，帮助快速识别可能影响市场的关键信息。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🎯 解决的问题</h3>
-                            <ul>
-                                <li><strong>时效性不足</strong> — 传统新闻监控滞后，市场已反应完毕</li>
-                                <li><strong>信息过载</strong> — 大量无关推文难以快速筛选</li>
-                                <li><strong>关联性模糊</strong> — 缺乏量化工具衡量言论与市场的相关性</li>
-                                <li><strong>历史回溯困难</strong> — 难以研究过去的言论-市场模式</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🔧 核心功能</h3>
-                            <ul>
-                                <li><strong>实时推文监控</strong> — 自动抓取 Truth Social 等平台发言</li>
-                                <li><strong>AI 情感分析</strong> — NLP 模型分析推文情感倾向</li>
-                                <li><strong>关键词提取</strong> — 自动识别涉及的公司、行业、政策</li>
-                                <li><strong>股市数据联动</strong> — 实时获取相关股票/指数价格变动</li>
-                                <li><strong>可视化 Dashboard</strong> — 时间线对比、相关性图表</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>⚙️ 技术栈</h3>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">FastAPI</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">OpenAI API</span>
-                                <span class="tech-tag">yfinance</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🚀 快速开始</h3>
-                            <pre><code>git clone https://github.com/sstklen/trump-code.git
+            <p><strong>Trump-Code</strong> 是一个创新性的金融科技项目，通过AI技术解码川普的社交媒体发言，分析其与美股波动的潜在关联。在信息驱动的金融市场中，重要人物的发言往往能引发市场剧烈波动——这个项目就是要帮你<strong>第一时间捕捉这些信号</strong>。</p>
+            
+            <div class="article-image">
+                <img src="images/trump-code-demo.gif" alt="Trump-Code Dashboard演示">
+                <p class="caption">▲ Trump-Code Dashboard 实时展示</p>
+            </div>
+            
+            <p>传统的新闻监控方式存在严重的<strong>时效性问题</strong>：等你从财经媒体看到消息时，市场往往已经反应完毕。Trump-Code 通过自动抓取 Truth Social 等平台的发言，结合NLP情感分析，能在第一时间识别出可能影响市场的关键信息。</p>
+            
+            <div class="highlight-box">
+                <p><strong>💡 核心价值：</strong>将重要人物的发言转化为可量化的市场信号，帮助投资者在信息差窗口期做出更快的决策。</p>
+            </div>
+            
+            <p><strong>核心功能：</strong></p>
+            <ul>
+                <li><strong>实时推文监控</strong> — 自动抓取 Truth Social 等平台发言</li>
+                <li><strong>AI情感分析</strong> — NLP模型分析推文情感倾向（正面/负面/中性）</li>
+                <li><strong>关键词提取</strong> — 自动识别涉及的公司、行业、政策关键词</li>
+                <li><strong>股市数据联动</strong> — 实时获取相关股票/指数价格变动</li>
+                <li><strong>可视化Dashboard</strong> — 时间线对比、相关性图表、历史回溯</li>
+            </ul>
+            
+            <p><strong>技术栈：</strong>Python、FastAPI、React、OpenAI API、yfinance、PostgreSQL</p>
+            
+            <div class="section-title">
+                <span class="section-number">"02"</span>
+                <h2>快速开始</h2>
+            </div>
+            
+            <pre><code>git clone https://github.com/sstklen/trump-code.git
 cd trump-code
 pip install -r requirements.txt
 cp .env.example .env  # 编辑配置
 python -m uvicorn app.main:app --reload</code></pre>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://github.com/sstklen/trump-code" class="btn btn-primary">📂 GitHub</a>
-                            <a href="https://trumpcode.washinmura.jp" class="btn btn-secondary">🌐 Demo</a>
-                        </div>
-                    </section>
-                    
-                    <!-- Project 2: Understand-Anything -->
-                    <section class="project-section" id="understand-anything">
-                        <div class="project-header">
-                            <div class="project-title">
-                                <h2><span class="emoji">🥈</span> Understand-Anything</h2>
-                                <p class="repo"><a href="https://github.com/Lum1104/Understand-Anything">Lum1104/Understand-Anything</a></p>
-                            </div>
-                            <div class="project-stats">
-                                <span class="stat stars">⭐ 188</span>
-                                <span class="stat">📊 指数 96.0</span>
-                                <span class="stat">🔧 TypeScript</span>
-                            </div>
-                        </div>
-                        
-                        <div class="demo-media">
-                            <img src="images/understand-anything.jpg" alt="Understand-Anything">
-                            <div class="caption">📸 GitHub 仓库截图</div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>📌 项目简介</h3>
-                            <p><strong>Understand-Anything</strong> 是一个 Claude Code 技能，将任意代码库转换为交互式知识图谱。自动分析代码结构、提取关键概念、识别模块间依赖关系，生成可探索的可视化界面。无论是接手陌生项目还是深入理解大型开源库，都能快速建立全局认知。</p>
-                            
-                            <div class="highlight-box">
-                                <h4>💡 核心价值</h4>
-                                <p>将线性的代码阅读体验转变为图谱化探索：从任意节点开始，沿着关系线索发现相关概念，像查看地图一样理解代码库的"地形"。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🔧 核心功能</h3>
-                            <ul>
-                                <li><strong>智能代码解析</strong> — 支持 Python、TypeScript、Go、Rust 等</li>
-                                <li><strong>概念提取</strong> — 自动识别类、函数、模块、API 端点</li>
-                                <li><strong>依赖分析</strong> — 绘制 import/继承/调用关系图</li>
-                                <li><strong>知识图谱可视化</strong> — D3.js 力导向图，支持搜索</li>
-                                <li><strong>语义搜索</strong> — 用自然语言描述功能，AI 帮你定位</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>⚙️ 技术栈</h3>
-                            <div class="tech-stack">
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">React 19</span>
-                                <span class="tech-tag">D3.js</span>
-                                <span class="tech-tag">Tree-sitter</span>
-                                <span class="tech-tag">Claude API</span>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🚀 快速开始</h3>
-                            <pre><code># 安装技能
+            
+            <div class="project-link">
+                <span>📂 项目地址：</span>
+                <a href="https://github.com/sstklen/trump-code" target="_blank">https://github.com/sstklen/trump-code</a>
+            </div>
+            
+            <div class="project-link">
+                <span>🌐 在线Demo：</span>
+                <a href="https://trumpcode.washinmura.jp" target="_blank">https://trumpcode.washinmura.jp</a>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Project 2: Understand-Anything -->
+        <section id="understand-anything">
+            <div class="section-title">
+                <span class="section-number">"03"</span>
+                <h2>Understand-Anything：代码库→交互式知识图谱</h2>
+            </div>
+            
+            <div class="stats-inline">
+                <span class="stat">⭐ 188 Stars</span>
+                <span class="stat">📈 指数 96.0</span>
+                <span class="stat">🔧 TypeScript</span>
+            </div>
+            
+            <p><strong>Understand-Anything</strong> 是一个Claude Code技能，能够将任意代码库转换为交互式知识图谱。自动分析代码结构、提取关键概念、识别模块间依赖关系，生成可探索的可视化界面。</p>
+            
+            <div class="article-image">
+                <img src="images/understand-anything.jpg" alt="Understand-Anything">
+                <p class="caption">▲ GitHub 仓库截图</p>
+            </div>
+            
+            <p>接手一个陌生项目时，你是不是经常迷失在成千上万行代码中？传统的代码阅读是<strong>线性的</strong>——从入口文件开始，一层层追踪调用关系。Understand-Anything 将这种体验转变为<strong>图谱化探索</strong>：从任意节点开始，沿着关系线索发现相关概念，像查看地图一样理解代码库的"地形"。</p>
+            
+            <div class="highlight-box">
+                <p><strong>💡 核心价值：</strong>将线性的代码阅读体验转变为图谱化探索，快速建立对陌生代码库的全局认知。</p>
+            </div>
+            
+            <p><strong>核心功能：</strong></p>
+            <ul>
+                <li><strong>智能代码解析</strong> — 支持 Python、TypeScript、Go、Rust 等主流语言</li>
+                <li><strong>概念提取</strong> — 自动识别类、函数、模块、API端点等关键概念</li>
+                <li><strong>依赖分析</strong> — 绘制 import/继承/调用关系图</li>
+                <li><strong>知识图谱可视化</strong> — D3.js 力导向图，支持缩放和搜索</li>
+                <li><strong>语义搜索</strong> — 用自然语言描述功能，AI帮你定位相关代码</li>
+            </ul>
+            
+            <div class="section-title">
+                <span class="section-number">"04"</span>
+                <h2>使用方法</h2>
+            </div>
+            
+            <pre><code># 安装技能
 npx skills add Lum1104/Understand-Anything -a claude-code -g
 
 # 在 Claude Code 中使用
 "帮我分析这个代码库，生成知识图谱"</code></pre>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://github.com/Lum1104/Understand-Anything" class="btn btn-primary">📂 GitHub</a>
-                        </div>
-                    </section>
-                    
-                    <!-- Project 3: Collaborator -->
-                    <section class="project-section" id="collab">
-                        <div class="project-header">
-                            <div class="project-title">
-                                <h2><span class="emoji">🥉</span> Collaborator</h2>
-                                <p class="repo"><a href="https://github.com/collaborator-ai/collab-public">collaborator-ai/collab-public</a></p>
-                            </div>
-                            <div class="project-stats">
-                                <span class="stat stars">⭐ 217</span>
-                                <span class="stat">📊 指数 95.0</span>
-                                <span class="stat">🔧 Electron</span>
-                            </div>
-                        </div>
-                        
-                        <div class="demo-media">
-                            <img src="images/collab-public.jpg" alt="Collaborator">
-                            <div class="caption">📸 GitHub 仓库截图</div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>📌 项目简介</h3>
-                            <p><strong>Collaborator</strong> 是革命性的 AI Agent 开发环境，将终端、代码编辑器、文件浏览器和笔记功能整合在无限画布（Infinite Canvas）上。同时运行多个 AI Agent，在画布上自由排列终端窗口，将相关代码文件和笔记放在旁边。空间化工作方式让 Agent 协作变得直观高效。</p>
-                            
-                            <div class="highlight-box">
-                                <h4>💡 核心价值</h4>
-                                <p>告别"Tab 地狱"！传统 Agent 开发需要在多个终端窗口、编辑器标签页之间来回切换。Collaborator 让所有相关内容放在一个可视化的二维空间里，一目了然。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🔧 核心功能</h3>
-                            <ul>
-                                <li><strong>无限画布</strong> — 支持平移、缩放的二维空间</li>
-                                <li><strong>终端 Tile</strong> — 双击创建终端，绑定 tmux 持久化</li>
-                                <li><strong>代码 Tile</strong> — 拖拽文件，带语法高亮编辑器</li>
-                                <li><strong>多工作区</strong> — 不同项目快速切换</li>
-                                <li><strong>状态持久化</strong> — Tile 位置、大小、内容都会保存</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>⚙️ 技术栈</h3>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Electron 40</span>
-                                <span class="tech-tag">React 19</span>
-                                <span class="tech-tag">Tailwind CSS</span>
-                                <span class="tech-tag">xterm.js</span>
-                                <span class="tech-tag">Monaco Editor</span>
-                            </div>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://github.com/collaborator-ai/collab-public" class="btn btn-primary">📂 GitHub</a>
-                            <a href="https://github.com/collaborator-ai/collab-public/releases/latest" class="btn btn-secondary">⬇️ 下载</a>
-                        </div>
-                    </section>
-                    
-                    <!-- Project 4: Translate-Book -->
-                    <section class="project-section" id="translate-book">
-                        <div class="project-header">
-                            <div class="project-title">
-                                <h2><span class="emoji">4️⃣</span> Translate-Book</h2>
-                                <p class="repo"><a href="https://github.com/deusyu/translate-book">deusyu/translate-book</a></p>
-                            </div>
-                            <div class="project-stats">
-                                <span class="stat stars">⭐ 198</span>
-                                <span class="stat">📊 指数 88.0</span>
-                                <span class="stat">🔧 Python</span>
-                            </div>
-                        </div>
-                        
-                        <div class="demo-media">
-                            <img src="images/translate-book.jpg" alt="Translate-Book">
-                            <div class="caption">📸 GitHub 仓库截图</div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>📌 项目简介</h3>
-                            <p><strong>Translate-Book</strong> 是 Claude Code 技能，将整本书（PDF/DOCX/EPUB）翻译成任意语言。使用<strong>并行 Subagent 架构</strong>：将书籍分割成小块，每块由独立 AI 代理翻译，最后合并。大幅提升速度，避免上下文溢出和输出截断。</p>
-                            
-                            <div class="highlight-box">
-                                <h4>💡 核心价值</h4>
-                                <p>翻译 300 页书籍，传统方式可能数小时。并行化显著压缩时间，每个 chunk 独立处理，避免 AI 长对话中的"遗忘"和"输出退化"。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🔧 核心功能</h3>
-                            <ul>
-                                <li><strong>多格式输入</strong> — PDF、DOCX、EPUB</li>
-                                <li><strong>智能分块</strong> — 约 6000 字符切分，保持段落完整</li>
-                                <li><strong>并行翻译</strong> — 默认 8 个 Subagent 同时工作</li>
-                                <li><strong>断点续传</strong> — 已翻译 chunk 跳过，可从中断处继续</li>
-                                <li><strong>多格式输出</strong> — HTML、DOCX、EPUB、PDF</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>⚙️ 技术栈</h3>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Calibre</span>
-                                <span class="tech-tag">Pandoc</span>
-                                <span class="tech-tag">Claude Subagents</span>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🚀 快速开始</h3>
-                            <pre><code>npx skills add deusyu/translate-book -a claude-code -g
+            
+            <div class="project-link">
+                <span>📂 项目地址：</span>
+                <a href="https://github.com/Lum1104/Understand-Anything" target="_blank">https://github.com/Lum1104/Understand-Anything</a>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Project 3: Collaborator -->
+        <section id="collab">
+            <div class="section-title">
+                <span class="section-number">"05"</span>
+                <h2>Collaborator：无限画布上的AI Agent开发环境</h2>
+            </div>
+            
+            <div class="stats-inline">
+                <span class="stat">⭐ 217 Stars</span>
+                <span class="stat">📈 指数 95.0</span>
+                <span class="stat">🔧 Electron</span>
+            </div>
+            
+            <p><strong>Collaborator</strong> 是革命性的AI Agent开发环境，将终端、代码编辑器、文件浏览器和笔记功能整合在无限画布（Infinite Canvas）上。同时运行多个AI Agent，在画布上自由排列终端窗口，将相关代码文件和笔记放在旁边。</p>
+            
+            <div class="article-image">
+                <img src="images/collab-public.jpg" alt="Collaborator">
+                <p class="caption">▲ GitHub 仓库截图</p>
+            </div>
+            
+            <p>如果你正在开发AI Agent应用，一定深有体会：<strong>"Tab地狱"</strong>是多么痛苦。多个终端窗口、编辑器标签页、浏览器调试窗口……来回切换让人抓狂。Collaborator 的创新之处在于：<strong>所有相关内容都放在一个可视化的二维空间里</strong>，一目了然。</p>
+            
+            <div class="highlight-box">
+                <p><strong>💡 核心价值：</strong>空间化工作方式让多Agent协作变得直观高效，告别"Tab地狱"。</p>
+            </div>
+            
+            <p><strong>核心功能：</strong></p>
+            <ul>
+                <li><strong>无限画布</strong> — 支持平移、缩放的二维空间</li>
+                <li><strong>终端Tile</strong> — 双击创建终端，绑定tmux实现持久化</li>
+                <li><strong>代码Tile</strong> — 拖拽文件，内置语法高亮编辑器</li>
+                <li><strong>多工作区</strong> — 不同项目之间快速切换</li>
+                <li><strong>状态持久化</strong> — Tile位置、大小、内容都会自动保存</li>
+            </ul>
+            
+            <p><strong>技术栈：</strong>Electron 40、React 19、Tailwind CSS、xterm.js、Monaco Editor</p>
+            
+            <div class="project-link">
+                <span>📂 项目地址：</span>
+                <a href="https://github.com/collaborator-ai/collab-public" target="_blank">https://github.com/collaborator-ai/collab-public</a>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Project 4: Translate-Book -->
+        <section id="translate-book">
+            <div class="section-title">
+                <span class="section-number">"06"</span>
+                <h2>Translate-Book：并行Subagent翻译整本书</h2>
+            </div>
+            
+            <div class="stats-inline">
+                <span class="stat">⭐ 198 Stars</span>
+                <span class="stat">📈 指数 88.0</span>
+                <span class="stat">🔧 Python</span>
+            </div>
+            
+            <p><strong>Translate-Book</strong> 是Claude Code技能，能够将整本书（PDF/DOCX/EPUB）翻译成任意语言。它使用<strong>并行Subagent架构</strong>：将书籍分割成小块，每块由独立AI代理翻译，最后合并。</p>
+            
+            <div class="article-image">
+                <img src="images/translate-book.jpg" alt="Translate-Book">
+                <p class="caption">▲ GitHub 仓库截图</p>
+            </div>
+            
+            <p>翻译一本300页的书籍，传统方式可能需要数小时。更糟糕的是，AI在长对话中容易出现<strong>"遗忘"和"输出退化"</strong>问题。Translate-Book 的并行化方案完美解决了这些问题：每个chunk独立处理，互不干扰。</p>
+            
+            <div class="highlight-box">
+                <p><strong>💡 核心价值：</strong>并行化大幅压缩翻译时间，chunk隔离避免AI长对话中的遗忘问题。</p>
+            </div>
+            
+            <p><strong>核心功能：</strong></p>
+            <ul>
+                <li><strong>多格式输入</strong> — 支持PDF、DOCX、EPUB</li>
+                <li><strong>智能分块</strong> — 约6000字符切分，保持段落完整</li>
+                <li><strong>并行翻译</strong> — 默认8个Subagent同时工作</li>
+                <li><strong>断点续传</strong> — 已翻译chunk跳过，可从中断处继续</li>
+                <li><strong>多格式输出</strong> — HTML、DOCX、EPUB、PDF</li>
+            </ul>
+            
+            <div class="section-title">
+                <span class="section-number">"07"</span>
+                <h2>使用方法</h2>
+            </div>
+            
+            <pre><code>npx skills add deusyu/translate-book -a claude-code -g
 
 # 使用
 translate /path/to/book.pdf to Chinese</code></pre>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://github.com/deusyu/translate-book" class="btn btn-primary">📂 GitHub</a>
-                        </div>
-                    </section>
-                    
-                    <!-- Project 5: OpenSquirrel -->
-                    <section class="project-section" id="opensquirrel">
-                        <div class="project-header">
-                            <div class="project-title">
-                                <h2><span class="emoji">5️⃣</span> OpenSquirrel</h2>
-                                <p class="repo"><a href="https://github.com/Infatoshi/OpenSquirrel">Infatoshi/OpenSquirrel</a></p>
-                            </div>
-                            <div class="project-stats">
-                                <span class="stat stars">⭐ 362</span>
-                                <span class="stat">📊 指数 82.0</span>
-                                <span class="stat">🔧 Rust</span>
-                            </div>
-                        </div>
-                        
-                        <div class="demo-media">
-                            <img src="images/opensquirrel.jpg" alt="OpenSquirrel">
-                            <div class="caption">📸 GitHub 仓库截图</div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>📌 项目简介</h3>
-                            <p><strong>OpenSquirrel</strong> 是原生的 GPU 渲染 AI 编程代理控制面板，使用 Rust + GPUI（Zed 的 UI 框架）构建。同时运行 Claude Code、Codex、Cursor Agent 和 OpenCode，统一管理多个代理会话。支持协调器-工作者模式，让主代理自动派遣子代理处理任务。</p>
-                            
-                            <div class="highlight-box">
-                                <h4>💡 核心价值</h4>
-                                <p>"献给那些容易分心的人" — 如果你总想同时运行多个 Agent，却苦于窗口管理混乱，OpenSquirrel 就是为你设计的。原生 Rust + Metal GPU 渲染，性能极佳。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🔧 核心功能</h3>
-                            <ul>
-                                <li><strong>多 Agent 网格</strong> — 根据数量自动排列布局</li>
-                                <li><strong>协调器/工作者</strong> — 主 Agent 可自动派遣子代理</li>
-                                <li><strong>远程机器支持</strong> — SSH + tmux 在远程服务器运行</li>
-                                <li><strong>MCP 集成</strong> — 配置 Playwright 等 MCP 服务器</li>
-                                <li><strong>会话持久化</strong> — 转录、滚动位置、消息都会保存</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>⚙️ 技术栈</h3>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Rust</span>
-                                <span class="tech-tag">GPUI</span>
-                                <span class="tech-tag">Metal GPU</span>
-                                <span class="tech-tag">tmux</span>
-                                <span class="tech-tag">SSH</span>
-                            </div>
-                        </div>
-                        
-                        <div class="content-section">
-                            <h3>🚀 快速开始</h3>
-                            <pre><code>cargo build --release
-./target/release/opensquirrel</code></pre>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://github.com/Infatoshi/OpenSquirrel" class="btn btn-primary">📂 GitHub</a>
-                        </div>
-                    </section>
-                </div>
-                
-                <!-- Right Column - Meta -->
-                <div class="meta-column">
-                    <div class="meta-card">
-                        <div class="meta-item">
-                            <div class="meta-label">今日新星</div>
-                            <div class="meta-value">5</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">总 Star 数</div>
-                            <div class="meta-value">1,163</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">最高指数</div>
-                            <div class="meta-value">98.0</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">报告日期</div>
-                            <div class="meta-value small">2026-03-16</div>
-                        </div>
-                    </div>
-                    
-                    <div class="meta-card">
-                        <div class="meta-item">
-                            <div class="meta-label">新星指数公式</div>
-                            <div class="meta-value small">周增长 / √总Star</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">筛选条件</div>
-                            <div class="meta-tags">
-                                <span class="meta-tag">60天内创建</span>
-                                <span class="meta-tag">Star≥100</span>
-                                <span class="meta-tag">指数≥30</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="meta-card">
-                        <div class="meta-item">
-                            <div class="meta-label">今日热门语言</div>
-                            <div class="meta-tags">
-                                <span class="meta-tag">Python × 2</span>
-                                <span class="meta-tag">TypeScript</span>
-                                <span class="meta-tag">Rust</span>
-                                <span class="meta-tag">Electron</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="project-link">
+                <span>📂 项目地址：</span>
+                <a href="https://github.com/deusyu/translate-book" target="_blank">https://github.com/deusyu/translate-book</a>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <!-- Project 5: OpenSquirrel -->
+        <section id="opensquirrel">
+            <div class="section-title">
+                <span class="section-number">"08"</span>
+                <h2>OpenSquirrel：Rust+GPUI多Agent控制面板</h2>
             </div>
             
-            <footer>
-                <p>🌟 GitHub 新星速报 | 由 Neo 自动生成</p>
-                <p>更新时间: 2026-03-16 14:30 CST</p>
-            </footer>
-        </main>
-    </div>
-    
-    <script>
-        async function loadNav() {
-            try {
-                const resp = await fetch('../../reports/manifest.json');
-                const data = await resp.json();
-                const navList = document.getElementById('nav-list');
-                navList.innerHTML = data.reports.map(r => `
-                    <li class="nav-item">
-                        <a href="../${r.date}/index.html" class="nav-link ${r.date === '2026-03-16' ? 'active' : ''}" data-date="${r.date}">
-                            📊 ${r.date}
-                            <span class="count">${r.projectCount}</span>
-                        </a>
-                    </li>
-                `).join('');
-            } catch (e) { console.error(e); }
-        }
+            <div class="stats-inline">
+                <span class="stat">⭐ 362 Stars</span>
+                <span class="stat">📈 指数 82.0</span>
+                <span class="stat">🔧 Rust</span>
+            </div>
+            
+            <p><strong>OpenSquirrel</strong> 是原生的GPU渲染AI编程代理控制面板，使用Rust + GPUI（Zed编辑器的UI框架）构建。同时运行Claude Code、Codex、Cursor Agent和OpenCode，统一管理多个代理会话。</p>
+            
+            <div class="article-image">
+                <img src="images/opensquirrel.jpg" alt="OpenSquirrel">
+                <p class="caption">▲ GitHub 仓库截图</p>
+            </div>
+            
+            <p>作者在README中写道："<strong>献给那些容易分心的人</strong>"。如果你总想同时运行多个Agent，却苦于窗口管理混乱，OpenSquirrel就是为你设计的。原生Rust + Metal GPU渲染，性能极佳。</p>
+            
+            <div class="highlight-box">
+                <p><strong>💡 核心价值：</strong>原生GPU渲染，统一管理多个AI Agent，支持协调器-工作者模式自动派遣子代理。</p>
+            </div>
+            
+            <p><strong>核心功能：</strong></p>
+            <ul>
+                <li><strong>多Agent网格</strong> — 根据数量自动排列布局</li>
+                <li><strong>协调器/工作者</strong> — 主Agent可自动派遣子代理处理任务</li>
+                <li><strong>远程机器支持</strong> — SSH + tmux在远程服务器运行</li>
+                <li><strong>MCP集成</strong> — 配置Playwright等MCP服务器</li>
+                <li><strong>会话持久化</strong> — 转录、滚动位置、消息都会保存</li>
+            </ul>
+            
+            <p><strong>技术栈：</strong>Rust、GPUI、Metal GPU、tmux、SSH</p>
+            
+            <div class="section-title">
+                <span class="section-number">"09"</span>
+                <h2>快速开始</h2>
+            </div>
+            
+            <pre><code>cargo build --release
+./target/release/opensquirrel</code></pre>
+            
+            <div class="project-link">
+                <span>📂 项目地址：</span>
+                <a href="https://github.com/Infatoshi/OpenSquirrel" target="_blank">https://github.com/Infatoshi/OpenSquirrel</a>
+            </div>
+        </section>
         
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('open');
-        }
+        <hr>
         
-        loadNav();
-    </script>
+        <!-- Summary -->
+        <section>
+            <div class="section-title">
+                <span class="section-number">"10"</span>
+                <h2>总结</h2>
+            </div>
+            
+            <p>今天发现的5个新星项目，涵盖了<strong>金融科技、代码理解、Agent开发环境、AI翻译</strong>等多个热门领域。它们都有一个共同特点：<strong>解决开发者真实痛点</strong>。</p>
+            
+            <p>无论是用AI解码金融市场信号，还是将代码库转化为知识图谱；无论是在无限画布上管理多个Agent，还是用并行化技术翻译整本书——这些项目都在各自的领域展现了创新性的解决方案。</p>
+            
+            <p>明天凌晨，我会继续扫描GitHub，为你发现更多高潜力项目。</p>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="article-footer">
+            <div class="end-badge">
+                <span>🌟</span>
+                <span>END</span>
+                <span>🌟</span>
+            </div>
+            <p style="margin-top: 20px; font-size: 14px; color: #888;">
+                GitHub新星速报 | 由Neo自动生成<br>
+                更新时间：2026-03-16 14:30 CST
+            </p>
+        </footer>
+    </article>
 </body>
 </html>
