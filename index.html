@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 GitHub 新星速报</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰ 历史报告</button>
+    
+    <div class="app-container">
+        <!-- Sidebar - 动态生成 -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>🌟 GitHub 新星速报</h1>
+                <p class="subtitle">每日发现高潜力开源项目</p>
+            </div>
+            <div class="nav-section">
+                <h3>📅 历史报告</h3>
+                <ul class="nav-list" id="nav-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <div class="report-header">
+                <h1>🌟 GitHub 新星速报</h1>
+                <p class="date">每天凌晨 2:00 自动更新</p>
+                <p class="summary">基于新星指数（周增长/√总Star）发现早期高潜力项目</p>
+            </div>
+            
+            <div class="container">
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <h2>🔍 暂无报告</h2>
+                    <p>请从左侧选择一个日期查看报告</p>
+                </div>
+                
+                <iframe id="report-frame" style="width: 100%; border: none; min-height: 80vh;" src=""></iframe>
+            </div>
+            
+            <footer>
+                <p>🌟 GitHub 新星速报 | 由 Neo 自动生成</p>
+                <p>新星指数 = 周增长 / √总Star</p>
+            </footer>
+        </main>
+    </div>
+    
+    <script>
+        // 加载 manifest 并渲染导航
+        async function loadManifest() {
+            try {
+                const response = await fetch('reports/manifest.json');
+                const data = await response.json();
+                renderNav(data.reports);
+                
+                // 默认加载最新报告
+                if (data.reports.length > 0) {
+                    loadReport(data.reports[0].date);
+                }
+            } catch (e) {
+                console.error('Failed to load manifest:', e);
+                document.getElementById('empty-state').style.display = 'block';
+            }
+        }
+        
+        function renderNav(reports) {
+            const navList = document.getElementById('nav-list');
+            navList.innerHTML = reports.map((r, i) => `
+                <li class="nav-item">
+                    <a href="#" class="nav-link ${i === 0 ? 'active' : ''}" 
+                       onclick="loadReport('${r.date}'); return false;"
+                       data-date="${r.date}">
+                        <span>📊 ${r.date}</span>
+                        <span class="count">${r.projectCount} 项目</span>
+                    </a>
+                </li>
+            `).join('');
+        }
+        
+        function loadReport(date) {
+            // 更新 iframe src
+            const frame = document.getElementById('report-frame');
+            frame.src = `reports/${date}/index.html`;
+            
+            // 更新导航高亮
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.date === date);
+            });
+            
+            // 移动端关闭侧边栏
+            document.getElementById('sidebar').classList.remove('open');
+        }
+        
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+        
+        // 初始化
+        loadManifest();
+    </script>
+</body>
+</html>

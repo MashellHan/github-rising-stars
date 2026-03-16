@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 GitHub 新星速报 | 2026-03-16</title>
+    <style>
+        :root {
+            --primary: #0366d6;
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --border: #30363d;
+            --accent: #58a6ff;
+            --star: #f0c14b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #58a6ff, #a371f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header .date { color: var(--text-muted); font-size: 1.1em; }
+        header .subtitle { color: var(--text); margin-top: 15px; font-size: 1.2em; }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        .stat-label { color: var(--text-muted); font-size: 0.9em; }
+        
+        nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--border); }
+        nav a.active { background: var(--primary); color: white; }
+        
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .toc h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
+        }
+        .toc-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            border-color: var(--accent);
+        }
+        .toc-rank {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--accent);
+            min-width: 40px;
+        }
+        .toc-info h3 { font-size: 1.1em; margin-bottom: 5px; }
+        .toc-info .stars {
+            color: var(--star);
+            font-size: 0.9em;
+        }
+        .toc-info .desc {
+            color: var(--text-muted);
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+        .toc-index {
+            font-size: 0.9em;
+            color: var(--accent);
+            background: rgba(88, 166, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+        .project-header {
+            padding: 30px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .project-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .project-title h2 {
+            font-size: 1.8em;
+        }
+        .project-title .badge {
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+        }
+        .meta-item.stars { color: var(--star); font-weight: bold; }
+        
+        .project-screenshot {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        .project-content h3 {
+            color: var(--accent);
+            margin: 25px 0 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .project-content h3:first-child { margin-top: 0; }
+        .project-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .project-content ul {
+            margin: 15px 0 15px 20px;
+        }
+        .project-content li {
+            margin-bottom: 8px;
+        }
+        .project-content code {
+            background: var(--bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+            color: var(--accent);
+        }
+        .project-content pre {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid var(--border);
+        }
+        .project-content pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: #1f6feb; }
+        .btn-secondary {
+            background: var(--border);
+            color: var(--text);
+        }
+        .btn-secondary:hover { background: #484f58; }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(163, 113, 247, 0.1) 100%);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .highlight-box h4 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-tag {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .toc-list { grid-template-columns: 1fr; }
+            .project-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌟 GitHub 新星速报</h1>
+        <div class="date">2026年3月16日 · 周日</div>
+        <div class="subtitle">发现 5 个高潜力爆发项目，新星指数均 > 80</div>
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value">5</div>
+                <div class="stat-label">新星项目</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">1,394</div>
+                <div class="stat-label">总 Star 数</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">98.0</div>
+                <div class="stat-label">最高指数</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <span style="font-weight: bold;">📋 快速导航</span>
+            <div>
+                <a href="#toc">目录</a>
+                <a href="#trump-code">Trump-Code</a>
+                <a href="#understand-anything">Understand-Anything</a>
+                <a href="#collab">Collaborator</a>
+                <a href="#translate-book">Translate-Book</a>
+                <a href="#opensquirrel">OpenSquirrel</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- 目录 -->
+        <section class="toc" id="toc">
+            <h2>📑 今日新星榜</h2>
+            <div class="toc-list">
+                <a href="#trump-code" class="toc-item">
+                    <span class="toc-rank">🥇</span>
+                    <div class="toc-info">
+                        <h3>sstklen/trump-code</h3>
+                        <span class="stars">⭐ 198 Stars</span>
+                        <span class="toc-index">指数: 98.0</span>
+                        <p class="desc">AI 解码川普推文 × 美股关联分析</p>
+                    </div>
+                </a>
+                <a href="#understand-anything" class="toc-item">
+                    <span class="toc-rank">🥈</span>
+                    <div class="toc-info">
+                        <h3>Lum1104/Understand-Anything</h3>
+                        <span class="stars">⭐ 188 Stars</span>
+                        <span class="toc-index">指数: 96.0</span>
+                        <p class="desc">代码库 → 知识图谱可视化</p>
+                    </div>
+                </a>
+                <a href="#collab" class="toc-item">
+                    <span class="toc-rank">🥉</span>
+                    <div class="toc-info">
+                        <h3>collaborator-ai/collab-public</h3>
+                        <span class="stars">⭐ 217 Stars</span>
+                        <span class="toc-index">指数: 95.0</span>
+                        <p class="desc">无限画布上的 Agent 开发环境</p>
+                    </div>
+                </a>
+                <a href="#translate-book" class="toc-item">
+                    <span class="toc-rank">4️⃣</span>
+                    <div class="toc-info">
+                        <h3>deusyu/translate-book</h3>
+                        <span class="stars">⭐ 198 Stars</span>
+                        <span class="toc-index">指数: 88.0</span>
+                        <p class="desc">并行 Subagent 全书翻译技能</p>
+                    </div>
+                </a>
+                <a href="#opensquirrel" class="toc-item">
+                    <span class="toc-rank">5️⃣</span>
+                    <div class="toc-info">
+                        <h3>Infatoshi/OpenSquirrel</h3>
+                        <span class="stars">⭐ 362 Stars</span>
+                        <span class="toc-index">指数: 82.0</span>
+                        <p class="desc">Rust/GPUI 多 Agent 控制面板</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 项目 1: Trump-Code -->
+        <article class="project-card" id="trump-code">
+            <div class="project-header">
+                <div class="project-title">
+                    <h2>🥇 Trump-Code</h2>
+                    <span class="badge">新星指数 98.0</span>
+                </div>
+                <div class="project-meta">
+                    <span class="meta-item stars">⭐ 198</span>
+                    <span class="meta-item">🍴 Forks: 12</span>
+                    <span class="meta-item">📅 创建于: 2026-03-15</span>
+                    <span class="meta-item">🔧 Python</span>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <h3>📌 项目简介</h3>
+                <p><strong>Trump-Code</strong> 是一个创新性的金融科技项目，旨在通过人工智能技术解码美国前总统唐纳德·川普（Donald Trump）的社交媒体发言，并分析其与美国股市波动之间的潜在关联。该项目提供了一个实时 Dashboard 仪表盘，让投资者和研究人员能够直观地观察川普言论与市场反应之间的时间线对比。</p>
+                
+                <div class="highlight-box">
+                    <h4>💡 核心价值</h4>
+                    <p>在当今信息驱动的金融市场中，社交媒体上的重要人物发言往往会引发市场剧烈波动。Trump-Code 通过 AI 情感分析和事件提取技术，帮助用户快速识别可能影响市场的关键信息。</p>
+                </div>
+                
+                <h3>🎯 痛点背景</h3>
+                <p>众所周知，川普在担任总统期间及之后，其社交媒体发言频繁引发股市剧烈波动。无论是贸易政策声明、对特定公司的评论，还是对经济形势的表态，都可能在几分钟内造成数十亿美元的市值变化。然而，传统的新闻监控手段往往存在以下问题：</p>
+                <ul>
+                    <li><strong>时效性不足</strong>：等到新闻报道出来，市场可能已经反应完毕</li>
+                    <li><strong>信息过载</strong>：大量无关紧要的推文夹杂其中，难以快速筛选</li>
+                    <li><strong>关联性模糊</strong>：缺乏量化工具来衡量言论与市场反应的相关性</li>
+                    <li><strong>历史回溯困难</strong>：难以系统性地研究过去的言论-市场模式</li>
+                </ul>
+                
+                <h3>🔧 核心功能</h3>
+                <ul>
+                    <li><strong>实时推文监控</strong>：自动抓取 Truth Social 和其他平台的川普发言</li>
+                    <li><strong>AI 情感分析</strong>：使用 NLP 模型分析推文情感倾向（正面/负面/中性）</li>
+                    <li><strong>关键词提取</strong>：自动识别涉及的公司、行业、政策等关键实体</li>
+                    <li><strong>股市数据联动</strong>：实时获取相关股票/指数的价格变动</li>
+                    <li><strong>可视化 Dashboard</strong>：时间线对比、相关性图表、历史模式分析</li>
+                    <li><strong>告警系统</strong>：当检测到高影响力言论时推送通知</li>
+                </ul>
+                
+                <h3>⚙️ 技术栈</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">OpenAI API</span>
+                    <span class="tech-tag">yfinance</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Redis</span>
+                </div>
+                
+                <h3>🚀 快速开始</h3>
+                <pre><code># 克隆项目
+git clone https://github.com/sstklen/trump-code.git
+cd trump-code
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 配置 API 密钥
+cp .env.example .env
+# 编辑 .env 填入 OpenAI API Key 等
+
+# 启动服务
+python -m uvicorn app.main:app --reload
+
+# 访问 Dashboard
+open http://localhost:8000</code></pre>
+                
+                <h3>📊 使用场景</h3>
+                <ul>
+                    <li><strong>量化交易</strong>：将信号集成到交易策略中</li>
+                    <li><strong>风险管理</strong>：提前预警可能的市场波动</li>
+                    <li><strong>学术研究</strong>：研究社交媒体对金融市场的影响</li>
+                    <li><strong>新闻媒体</strong>：快速获取有数据支撑的报道素材</li>
+                </ul>
+                
+                <h3>💬 总结</h3>
+                <p>Trump-Code 是一个将 AI 情感分析与金融市场数据相结合的创新项目。虽然它聚焦于川普这一特定人物，但其底层架构完全可以扩展到其他有影响力的公众人物或机构。项目代码清晰、文档完善，是学习 AI + 金融科技结合的优秀案例。唯一需要注意的是，任何基于此的投资决策都应谨慎，因为市场行为本身具有高度不确定性。</p>
+                
+                <div class="project-links">
+                    <a href="https://github.com/sstklen/trump-code" class="btn-primary" target="_blank">📂 访问 GitHub</a>
+                    <a href="https://trumpcode.washinmura.jp" class="btn-secondary" target="_blank">🌐 在线 Demo</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 项目 2: Understand-Anything -->
+        <article class="project-card" id="understand-anything">
+            <div class="project-header">
+                <div class="project-title">
+                    <h2>🥈 Understand-Anything</h2>
+                    <span class="badge">新星指数 96.0</span>
+                </div>
+                <div class="project-meta">
+                    <span class="meta-item stars">⭐ 188</span>
+                    <span class="meta-item">🍴 Forks: 23</span>
+                    <span class="meta-item">📅 创建于: 2026-03-15</span>
+                    <span class="meta-item">🔧 TypeScript</span>
+                </div>
+            </div>
+            
+            <img src="images/understand-anything.jpg" alt="Understand-Anything Screenshot" class="project-screenshot">
+            
+            <div class="project-content">
+                <h3>📌 项目简介</h3>
+                <p><strong>Understand-Anything</strong> 是一个 Claude Code 技能（Skill），专门用于将任意代码库转换为交互式知识图谱。它能够自动分析代码结构、提取关键概念、识别模块间依赖关系，并生成一个可视化的、可探索的知识图谱界面。无论你是接手一个陌生项目，还是想深入理解一个大型开源库，这个工具都能帮你快速建立全局认知。</p>
+                
+                <div class="highlight-box">
+                    <h4>💡 核心价值</h4>
+                    <p>传统的代码阅读方式是线性的 — 你需要一个文件一个文件地看。Understand-Anything 将这种体验转变为图谱化的探索：你可以从任意一个节点开始，沿着关系线索发现相关概念，像查看地图一样理解整个代码库的"地形"。</p>
+                </div>
+                
+                <h3>🎯 痛点背景</h3>
+                <p>作为开发者，我们经常面临以下困境：</p>
+                <ul>
+                    <li><strong>新项目 onboarding 困难</strong>：加入新团队后，面对数十万行代码不知从何下手</li>
+                    <li><strong>大型开源项目学习曲线陡峭</strong>：想贡献代码，但连架构都看不明白</li>
+                    <li><strong>代码腐化难以察觉</strong>：随着迭代，模块间依赖变得混乱，但没人能说清全貌</li>
+                    <li><strong>文档与代码脱节</strong>：README 写的和实际实现差了十万八千里</li>
+                </ul>
+                
+                <h3>🔧 核心功能</h3>
+                <ul>
+                    <li><strong>智能代码解析</strong>：支持 Python、TypeScript、JavaScript、Go、Rust 等主流语言</li>
+                    <li><strong>概念提取</strong>：自动识别类、函数、模块、API 端点等关键实体</li>
+                    <li><strong>依赖分析</strong>：绘制 import/export、继承、调用等关系图</li>
+                    <li><strong>知识图谱可视化</strong>：基于 D3.js 的力导向图，支持缩放、拖拽、搜索</li>
+                    <li><strong>语义搜索</strong>：用自然语言描述你想找的功能，AI 帮你定位</li>
+                    <li><strong>差异影响分析</strong>：修改某个文件后，展示可能受影响的模块</li>
+                    <li><strong>分层视图</strong>：按目录层级折叠/展开，控制显示粒度</li>
+                </ul>
+                
+                <h3>⚙️ 技术栈</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">Tree-sitter</span>
+                    <span class="tech-tag">Claude API</span>
+                    <span class="tech-tag">Neo4j (可选)</span>
+                </div>
+                
+                <h3>🚀 快速开始</h3>
+                <pre><code># 在 Claude Code 中直接使用
+npx skills add Lum1104/Understand-Anything -a claude-code -g
+
+# 然后在 Claude Code 中说：
+"帮我分析这个代码库，生成知识图谱"
+
+# 或者指定目录
+"对 ./src 目录生成架构图"</code></pre>
+                
+                <h3>🎨 适用人群</h3>
+                <ul>
+                    <li><strong>新员工</strong>：快速熟悉公司代码库</li>
+                    <li><strong>开源贡献者</strong>：理解项目架构后再提 PR</li>
+                    <li><strong>Tech Lead</strong>：审查架构设计、发现循环依赖</li>
+                    <li><strong>学习者</strong>：通过优秀开源项目学习架构设计</li>
+                </ul>
+                
+                <h3>💬 总结</h3>
+                <p>Understand-Anything 填补了"代码理解工具"领域的一个空白。它不是简单的静态分析工具，而是借助 AI 的语义理解能力，生成真正有意义的知识图谱。对于任何需要快速理解陌生代码库的开发者来说，这是一个值得尝试的利器。项目本身也采用了 Claude Code Skill 的架构，代码简洁、扩展性强，是学习如何构建 AI Agent 技能的好范例。</p>
+                
+                <div class="project-links">
+                    <a href="https://github.com/Lum1104/Understand-Anything" class="btn-primary" target="_blank">📂 访问 GitHub</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 项目 3: Collaborator -->
+        <article class="project-card" id="collab">
+            <div class="project-header">
+                <div class="project-title">
+                    <h2>🥉 Collaborator</h2>
+                    <span class="badge">新星指数 95.0</span>
+                </div>
+                <div class="project-meta">
+                    <span class="meta-item stars">⭐ 217</span>
+                    <span class="meta-item">🍴 Forks: 15</span>
+                    <span class="meta-item">📅 创建于: 2026-03-15</span>
+                    <span class="meta-item">🔧 Electron + React</span>
+                </div>
+            </div>
+            
+            <img src="images/collab-public.jpg" alt="Collaborator Screenshot" class="project-screenshot">
+            
+            <div class="project-content">
+                <h3>📌 项目简介</h3>
+                <p><strong>Collaborator</strong> 是一个革命性的 AI Agent 开发环境，它将终端、代码编辑器、文件浏览器和笔记功能全部整合在一个无限画布（Infinite Canvas）上。你可以同时运行多个 AI Agent（如 Claude Code、Codex），在画布上自由排列它们的终端窗口，并将相关的代码文件和笔记放在旁边。这种空间化的工作方式让 Agent 协作变得直观而高效。</p>
+                
+                <div class="highlight-box">
+                    <h4>💡 核心价值</h4>
+                    <p>告别"Tab 地狱"！传统的 Agent 开发需要在多个终端窗口、编辑器标签页之间来回切换。Collaborator 让你把所有相关内容放在一个可视化的二维空间里，一目了然，再也不用担心迷失在无数标签页中。</p>
+                </div>
+                
+                <h3>🎯 痛点背景</h3>
+                <p>使用 AI Agent 进行开发时，我们通常面临这些挑战：</p>
+                <ul>
+                    <li><strong>上下文切换成本高</strong>：运行 Agent 的终端、查看生成代码的编辑器、参考文档的浏览器...需要不断切换</li>
+                    <li><strong>多 Agent 协作混乱</strong>：同时运行多个 Agent 时，很难追踪谁在做什么</li>
+                    <li><strong>工作流程碎片化</strong>：不同工具之间数据不互通</li>
+                    <li><strong>会话持久性差</strong>：关掉终端就丢失了之前的上下文</li>
+                </ul>
+                
+                <h3>🔧 核心功能</h3>
+                <ul>
+                    <li><strong>无限画布</strong>：支持平移、缩放的二维空间，所有内容以"Tile"形式存在</li>
+                    <li><strong>终端 Tile</strong>：双击画布创建终端，自动绑定 tmux 会话实现持久化</li>
+                    <li><strong>代码 Tile</strong>：拖拽文件到画布，获得带语法高亮的编辑器</li>
+                    <li><strong>笔记 Tile</strong>：Markdown 文件以富文本形式展示和编辑</li>
+                    <li><strong>图片 Tile</strong>：查看项目中的图片资源</li>
+                    <li><strong>多工作区支持</strong>：在不同项目之间快速切换</li>
+                    <li><strong>文件树导航</strong>：侧边栏展示当前工作区的文件结构</li>
+                    <li><strong>状态持久化</strong>：所有 Tile 的位置、大小、内容都会保存</li>
+                </ul>
+                
+                <h3>⚙️ 技术栈</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Electron 40</span>
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">Tailwind CSS 4</span>
+                    <span class="tech-tag">xterm.js</span>
+                    <span class="tech-tag">Monaco Editor</span>
+                    <span class="tech-tag">tmux</span>
+                    <span class="tech-tag">D3.js</span>
+                </div>
+                
+                <h3>🚀 快速开始</h3>
+                <pre><code># 下载最新版本（macOS Apple Silicon）
+# 访问 Releases 页面下载 .dmg
+
+# 或使用命令行安装
+curl -fsSL https://raw.githubusercontent.com/collaborator-ai/collab-public/main/install.sh | bash
+
+# 启动后：
+# 1. 添加工作区（Cmd+Shift+O）
+# 2. 双击画布创建终端
+# 3. 拖拽文件到画布查看</code></pre>
+                
+                <h3>⌨️ 快捷键</h3>
+                <ul>
+                    <li><code>Cmd+Shift+O</code> — 添加新工作区</li>
+                    <li><code>双击画布</code> — 创建终端 Tile</li>
+                    <li><code>Cmd+K</code> — 全局搜索</li>
+                    <li><code>Cmd+=</code> / <code>Cmd+-</code> — 缩放画布</li>
+                    <li><code>Cmd+0</code> — 重置缩放</li>
+                    <li><code>Escape</code> — 关闭 Viewer</li>
+                </ul>
+                
+                <h3>💬 总结</h3>
+                <p>Collaborator 代表了 AI Agent 开发工具的一种新思路：与其让用户适应传统的窗口管理方式，不如提供一个更符合人类空间思维的工作环境。虽然目前只支持 macOS 且源码尚未开放，但其设计理念非常值得关注。如果你经常同时运行多个 Agent，或者苦于在众多窗口间切换，Collaborator 可能会显著提升你的工作效率。</p>
+                
+                <div class="project-links">
+                    <a href="https://github.com/collaborator-ai/collab-public" class="btn-primary" target="_blank">📂 访问 GitHub</a>
+                    <a href="https://github.com/collaborator-ai/collab-public/releases/latest" class="btn-secondary" target="_blank">⬇️ 下载最新版</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 项目 4: Translate-Book -->
+        <article class="project-card" id="translate-book">
+            <div class="project-header">
+                <div class="project-title">
+                    <h2>4️⃣ Rainman Translate Book</h2>
+                    <span class="badge">新星指数 88.0</span>
+                </div>
+                <div class="project-meta">
+                    <span class="meta-item stars">⭐ 198</span>
+                    <span class="meta-item">🍴 Forks: 17</span>
+                    <span class="meta-item">📅 创建于: 2026-03-15</span>
+                    <span class="meta-item">🔧 Python</span>
+                </div>
+            </div>
+            
+            <img src="images/translate-book.jpg" alt="Translate-Book Screenshot" class="project-screenshot">
+            
+            <div class="project-content">
+                <h3>📌 项目简介</h3>
+                <p><strong>Rainman Translate Book</strong> 是一个 Claude Code 技能，专门用于将整本书（PDF/DOCX/EPUB 格式）翻译成任意目标语言。它的独特之处在于使用**并行 Subagent 架构**：将书籍分割成多个小块，每个小块由一个独立的 AI 代理翻译，最后再合并成完整的译本。这种方式不仅大幅提升翻译速度，还有效避免了单次会话中的上下文溢出和输出截断问题。</p>
+                
+                <div class="highlight-box">
+                    <h4>💡 核心价值</h4>
+                    <p>翻译一本 300 页的书，传统方式可能需要数小时甚至数天。Translate-Book 通过并行化将这个时间压缩到可接受的范围。同时，每个 chunk 独立处理，避免了 AI 在长对话中常见的"遗忘"和"输出退化"问题。</p>
+                </div>
+                
+                <h3>🎯 痛点背景</h3>
+                <p>使用 AI 翻译整本书面临诸多挑战：</p>
+                <ul>
+                    <li><strong>上下文窗口限制</strong>：一本书的内容远超 AI 的上下文窗口，必须分块处理</li>
+                    <li><strong>输出截断</strong>：长时间会话中 AI 倾向于缩短回复，导致内容丢失</li>
+                    <li><strong>质量不一致</strong>：随着对话延续，翻译质量可能下降</li>
+                    <li><strong>断点续传困难</strong>：中途出错需要重新开始</li>
+                    <li><strong>格式处理复杂</strong>：PDF/DOCX 的格式转换和最终输出都是难题</li>
+                </ul>
+                
+                <h3>🔧 核心功能</h3>
+                <ul>
+                    <li><strong>多格式输入</strong>：支持 PDF、DOCX、EPUB 作为源文件</li>
+                    <li><strong>智能分块</strong>：按约 6000 字符切分，保持段落完整性</li>
+                    <li><strong>并行翻译</strong>：默认 8 个 Subagent 同时工作</li>
+                    <li><strong>Manifest 校验</strong>：SHA-256 哈希追踪，防止遗漏或损坏</li>
+                    <li><strong>断点续传</strong>：已翻译的 chunk 会被跳过，可从中断处继续</li>
+                    <li><strong>多格式输出</strong>：HTML（带浮动目录）、DOCX、EPUB、PDF</li>
+                    <li><strong>多语言支持</strong>：中/英/日/韩/法/德/西等</li>
+                </ul>
+                
+                <h3>⚙️ 技术栈</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Calibre</span>
+                    <span class="tech-tag">Pandoc</span>
+                    <span class="tech-tag">Claude Code Subagents</span>
+                    <span class="tech-tag">BeautifulSoup</span>
+                </div>
+                
+                <h3>📋 工作流程</h3>
+                <pre><code>Input (PDF/DOCX/EPUB)
+        │
+        ▼
+Calibre ebook-convert → HTMLZ → HTML → Markdown
+        │
+        ▼
+Split into chunks (chunk0001.md, chunk0002.md, ...)
+        │ manifest.json tracks chunk hashes
+        ▼
+Parallel subagents (8 concurrent by default)
+        │ each: read 1 chunk → translate → write output_chunk*.md
+        ▼
+Validate (manifest hash check, 1:1 source↔output match)
+        │
+        ▼
+Merge → Pandoc → HTML (with TOC) → Calibre → DOCX / EPUB / PDF</code></pre>
+                
+                <h3>🚀 快速开始</h3>
+                <pre><code># 安装技能
+npx skills add deusyu/translate-book -a claude-code -g
+
+# 在 Claude Code 中使用
+translate /path/to/book.pdf to Chinese
+
+# 或使用 slash 命令
+/translate-book translate /path/to/book.pdf to Japanese</code></pre>
+                
+                <h3>📁 输出文件</h3>
+                <ul>
+                    <li><code>output.md</code> — 合并后的 Markdown 译文</li>
+                    <li><code>book.html</code> — 带浮动目录的网页版</li>
+                    <li><code>book.docx</code> — Word 文档</li>
+                    <li><code>book.epub</code> — 电子书格式</li>
+                    <li><code>book.pdf</code> — 打印就绪的 PDF</li>
+                </ul>
+                
+                <h3>💬 总结</h3>
+                <p>Translate-Book 是 Claude Code Subagent 架构的一个精彩应用。它展示了如何通过任务分解和并行化来处理超出单次会话能力的大型任务。对于需要翻译技术文档、学术著作或文学作品的用户来说，这是一个极其实用的工具。项目代码组织清晰，每个脚本职责单一，也是学习如何构建复杂 AI 工作流的好教材。</p>
+                
+                <div class="project-links">
+                    <a href="https://github.com/deusyu/translate-book" class="btn-primary" target="_blank">📂 访问 GitHub</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 项目 5: OpenSquirrel -->
+        <article class="project-card" id="opensquirrel">
+            <div class="project-header">
+                <div class="project-title">
+                    <h2>5️⃣ OpenSquirrel</h2>
+                    <span class="badge">新星指数 82.0</span>
+                </div>
+                <div class="project-meta">
+                    <span class="meta-item stars">⭐ 362</span>
+                    <span class="meta-item">🍴 Forks: 26</span>
+                    <span class="meta-item">📅 创建于: 2026-03-16</span>
+                    <span class="meta-item">🔧 Rust</span>
+                </div>
+            </div>
+            
+            <img src="images/opensquirrel.jpg" alt="OpenSquirrel Screenshot" class="project-screenshot">
+            
+            <div class="project-content">
+                <h3>📌 项目简介</h3>
+                <p><strong>OpenSquirrel</strong> 是一个原生的、GPU 渲染的 AI 编程代理控制面板，使用 Rust 和 GPUI（Zed 编辑器的 UI 框架）构建。它允许你同时运行 Claude Code、Codex、Cursor Agent 和 OpenCode，在一个统一的界面中管理多个代理会话。它还支持协调器-工作者模式，让主代理（如 Opus）自动派遣子代理处理具体任务。</p>
+                
+                <div class="highlight-box">
+                    <h4>💡 核心价值</h4>
+                    <p>"献给那些容易分心的人"——这是项目的标语。如果你发现自己总是想同时运行多个 Agent，却苦于窗口管理的混乱，OpenSquirrel 就是为你设计的。它不使用 Electron，而是原生 Rust + Metal GPU 渲染，性能极佳。</p>
+                </div>
+                
+                <h3>🎯 痛点背景</h3>
+                <p>AI Agent 生态日益丰富，但问题也随之而来：</p>
+                <ul>
+                    <li><strong>Agent 选择困难</strong>：Claude Code 擅长某些任务，Codex 擅长另一些，想同时用</li>
+                    <li><strong>窗口管理混乱</strong>：每个 Agent 一个终端，很快就淹没在窗口堆里</li>
+                    <li><strong>远程开发复杂</strong>：在本地运行 Agent 操作远程服务器，配置繁琐</li>
+                    <li><strong>会话状态丢失</strong>：关掉终端就丢失了对话历史</li>
+                    <li><strong>Electron 应用资源占用大</strong>：同时开多个 Electron 应用会吃掉大量内存</li>
+                </ul>
+                
+                <h3>🔧 核心功能</h3>
+                <ul>
+                    <li><strong>多 Agent 网格布局</strong>：根据 Agent 数量自动排列（1=全屏，2=左右分，4=2×2）</li>
+                    <li><strong>协调器/工作者模式</strong>：主 Agent（Opus）可自动派遣子代理</li>
+                    <li><strong>远程机器支持</strong>：通过 SSH + tmux 在远程服务器上运行 Agent</li>
+                    <li><strong>MCP 集成</strong>：直接配置 Playwright、browser-use 等 MCP 服务器</li>
+                    <li><strong>会话持久化</strong>：转录记录、滚动位置、待发送消息都会保存</li>
+                    <li><strong>结构化输出解析</strong>：解析所有运行时的 stream-json 输出</li>
+                    <li><strong>自定义 Markdown 渲染</strong>：代码块、diff、标题、列表都有专门样式</li>
+                    <li><strong>主题切换</strong>：midnight、gruvbox、solarized 等 8 种主题</li>
+                </ul>
+                
+                <h3>⚙️ 技术栈</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">GPUI</span>
+                    <span class="tech-tag">Metal (GPU)</span>
+                    <span class="tech-tag">tmux</span>
+                    <span class="tech-tag">SSH</span>
+                </div>
+                
+                <h3>🖥️ 支持的运行时</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: var(--bg);">
+                        <th style="padding: 10px; text-align: left; border: 1px solid var(--border);">Runtime</th>
+                        <th style="padding: 10px; text-align: left; border: 1px solid var(--border);">Mode</th>
+                        <th style="padding: 10px; text-align: left; border: 1px solid var(--border);">Permission Bypass</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid var(--border);">Claude Code</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);">Persistent stdin</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);"><code>--dangerously-skip-permissions</code></td>
+                    </tr>
+                    <tr style="background: var(--bg);">
+                        <td style="padding: 10px; border: 1px solid var(--border);">Codex</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);">One-shot</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);"><code>--dangerously-bypass-approvals-and-sandbox</code></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid var(--border);">Cursor Agent</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);">One-shot</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);"><code>--yolo</code></td>
+                    </tr>
+                    <tr style="background: var(--bg);">
+                        <td style="padding: 10px; border: 1px solid var(--border);">OpenCode</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);">One-shot</td>
+                        <td style="padding: 10px; border: 1px solid var(--border);">Auto-approved in run mode</td>
+                    </tr>
+                </table>
+                
+                <h3>🚀 快速开始</h3>
+                <pre><code># 构建
+cargo build --release
+
+# 运行
+./target/release/opensquirrel
+
+# 或打包成 macOS .app
+mkdir -p dist/OpenSquirrel.app/Contents/{MacOS,Resources}
+cp target/release/opensquirrel dist/OpenSquirrel.app/Contents/MacOS/OpenSquirrel
+cp assets/OpenSquirrel.icns dist/OpenSquirrel.app/Contents/Resources/
+open dist/OpenSquirrel.app</code></pre>
+                
+                <h3>⌨️ 快捷键</h3>
+                <ul>
+                    <li><code>Enter</code> — 发送提示</li>
+                    <li><code>Cmd-N</code> — 新建 Agent（打开设置向导）</li>
+                    <li><code>Cmd-K</code> — 命令面板</li>
+                    <li><code>Cmd-F</code> — 搜索转录记录</li>
+                    <li><code>Cmd-]</code> / <code>Cmd-[</code> — 切换同组内的 pane</li>
+                    <li><code>Cmd-}</code> / <code>Cmd-{</code> — 切换组</li>
+                </ul>
+                
+                <h3>💬 总结</h3>
+                <p>OpenSquirrel 是目前最有野心的 AI Agent 控制面板之一。它不仅仅是一个终端复用器，而是一个完整的多 Agent 编排系统。使用 Rust + GPUI 确保了极致的性能，~7200 行代码实现了如此丰富的功能，代码密度令人印象深刻。如果你是一个"Agent 重度用户"，需要同时管理多个 Agent 的复杂工作流，OpenSquirrel 绝对值得一试。唯一的遗憾是目前只支持 macOS（因为依赖 Metal GPU）。</p>
+                
+                <div class="project-links">
+                    <a href="https://github.com/Infatoshi/OpenSquirrel" class="btn-primary" target="_blank">📂 访问 GitHub</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <footer>
+        <p>🌟 GitHub 新星速报 | 由 Neo 自动生成</p>
+        <p>数据收集时间: 2026-03-16 14:00 CST</p>
+        <p>新星指数 = 周增长 / √总Star，用于发现早期高潜力项目</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "reports": [
+    {
+      "date": "2026-03-16",
+      "title": "GitHub 新星速报",
+      "projectCount": 5,
+      "totalStars": 1163,
+      "topIndex": 98.0,
+      "projects": [
+        {"name": "sstklen/trump-code", "stars": 198, "index": 98.0},
+        {"name": "Lum1104/Understand-Anything", "stars": 188, "index": 96.0},
+        {"name": "collaborator-ai/collab-public", "stars": 217, "index": 95.0},
+        {"name": "deusyu/translate-book", "stars": 198, "index": 88.0},
+        {"name": "Infatoshi/OpenSquirrel", "stars": 362, "index": 82.0}
+      ]
+    }
+  ],
+  "lastUpdated": "2026-03-16T14:15:00+08:00"
+}
