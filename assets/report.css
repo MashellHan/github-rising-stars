@@ -103,8 +103,8 @@
 .main-content {
     flex: 1;
     min-width: 0;
-    padding: 0 40px;
-    max-width: 800px;
+    padding: 0 48px;
+    max-width: 1100px;  /* 扩展约 37% */
 }
 
 .report-article {
@@ -404,18 +404,23 @@ li {
 }
 
 /* 移动端响应式 */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .right-sidebar {
         display: none;
     }
+    
+    .main-content {
+        max-width: 900px;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .sidebar {
         position: fixed;
         left: -260px;
         z-index: 1000;
         transition: left 0.3s;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.1);
     }
     
     .sidebar.open {
@@ -423,11 +428,57 @@ li {
     }
     
     .main-content {
-        padding: 0 20px;
+        padding: 0 24px;
+        max-width: 100%;
     }
     
     .menu-toggle {
         display: flex;
+    }
+    
+    .report-header h1 {
+        font-size: 22px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        padding: 0 16px;
+    }
+    
+    .report-article {
+        padding: 24px 0;
+    }
+    
+    .report-header h1 {
+        font-size: 20px;
+    }
+    
+    .stats-inline {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .stats-inline .stat {
+        display: inline-block;
+    }
+    
+    pre {
+        font-size: 12px;
+        padding: 12px;
+    }
+    
+    .highlight-box {
+        padding: 12px;
+    }
+    
+    .project-section {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
     }
 }
 
@@ -443,4 +494,28 @@ li {
     padding: 8px 12px;
     cursor: pointer;
     font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 图片响应式 */
+.article-image img,
+.demo-gif img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 代码块响应式 */
+pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 触摸友好的链接 */
+@media (hover: none) {
+    .nav-link,
+    .project-nav a {
+        padding: 12px;
+    }
 }
