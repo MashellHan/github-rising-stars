@@ -5,6 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5个GitHub新星项目速报！Trump-Code、Understand-Anything等火爆开源</title>
     <link rel="stylesheet" href="../../assets/wechat-style.css">
+    <style>
+        /* 双栏导航 */
+        .nav-columns {
+            display: flex;
+            gap: 24px;
+            margin: 24px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        .nav-column {
+            flex: 1;
+        }
+        .nav-column h3 {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+        .nav-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-column li {
+            margin-bottom: 8px;
+            padding-left: 0;
+        }
+        .nav-column li::before {
+            display: none;
+        }
+        .nav-column a {
+            color: #576b95;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .nav-column a:hover {
+            text-decoration: underline;
+        }
+        .nav-column .date {
+            color: #999;
+            font-size: 12px;
+            margin-left: 4px;
+        }
+        .nav-column .stars {
+            color: #faad14;
+            font-size: 12px;
+        }
+        @media (max-width: 600px) {
+            .nav-columns {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <article>
@@ -21,16 +77,29 @@
         <p>每天凌晨，我会自动扫描GitHub Trending，筛选出<strong>60天内创建、增长最快的高潜力项目</strong>，计算"新星指数"（周增长/√总Star），为你发现下一个可能爆发的开源项目。</p>
         <p>今天发现了<strong>5个新星项目</strong>，涵盖AI编程、金融科技、代码理解等热门领域。让我们一起来看看！</p>
         
-        <!-- TOC -->
-        <div class="toc">
-            <h3>📑 今日新星榜</h3>
-            <ul>
-                <li><a href="#trump-code">🥇 sstklen/trump-code</a> <span class="stars">⭐198 | 指数98</span></li>
-                <li><a href="#understand-anything">🥈 Lum1104/Understand-Anything</a> <span class="stars">⭐188 | 指数96</span></li>
-                <li><a href="#collab">🥉 collaborator-ai/collab-public</a> <span class="stars">⭐217 | 指数95</span></li>
-                <li><a href="#translate-book">4️⃣ deusyu/translate-book</a> <span class="stars">⭐198 | 指数88</span></li>
-                <li><a href="#opensquirrel">5️⃣ Infatoshi/OpenSquirrel</a> <span class="stars">⭐362 | 指数82</span></li>
-            </ul>
+        <!-- 双栏导航 -->
+        <div class="nav-columns">
+            <div class="nav-column">
+                <h3>📚 历史报告</h3>
+                <ul>
+                    <li><a href="../2026-03-16/">2026-03-16</a> <span class="date">今天</span></li>
+                    <li><a href="../2026-03-15/">2026-03-15</a></li>
+                    <li><a href="../2026-03-14/">2026-03-14</a></li>
+                    <li><a href="../2026-03-13/">2026-03-13</a></li>
+                    <li><a href="../2026-03-12/">2026-03-12</a></li>
+                    <li><a href="../../">查看全部 →</a></li>
+                </ul>
+            </div>
+            <div class="nav-column">
+                <h3>🚀 今日项目</h3>
+                <ul>
+                    <li><a href="#trump-code">Trump-Code</a> <span class="stars">⭐198</span></li>
+                    <li><a href="#understand-anything">Understand-Anything</a> <span class="stars">⭐188</span></li>
+                    <li><a href="#collab">Collaborator</a> <span class="stars">⭐217</span></li>
+                    <li><a href="#translate-book">Translate-Book</a> <span class="stars">⭐198</span></li>
+                    <li><a href="#opensquirrel">OpenSquirrel</a> <span class="stars">⭐362</span></li>
+                </ul>
+            </div>
         </div>
         
         <hr>
