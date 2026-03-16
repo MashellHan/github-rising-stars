@@ -417,18 +417,26 @@ li {
 @media (max-width: 900px) {
     .sidebar {
         position: fixed;
-        left: -260px;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        width: 260px;
         z-index: 1000;
-        transition: left 0.3s;
-        box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 16px rgba(0,0,0,0.3);
     }
     
     .sidebar.open {
         left: 0;
     }
     
+    .sidebar-close {
+        display: block;
+    }
+    
     .main-content {
         padding: 0 24px;
+        padding-top: 60px; /* 为 menu-toggle 留空间 */
         max-width: 100%;
     }
     
@@ -488,15 +496,64 @@ li {
     top: 16px;
     left: 16px;
     z-index: 1001;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+    background: var(--card-bg, #1a1a1a);
+    border: 1px solid var(--border, #333);
     border-radius: 8px;
-    padding: 8px 12px;
+    padding: 10px 14px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    color: var(--text, #fff);
+    transition: all 0.2s;
+}
+
+.menu-toggle:hover {
+    background: var(--hover-bg, #2a2a2a);
+}
+
+.menu-toggle:active {
+    transform: scale(0.95);
+}
+
+/* 关闭按钮 - 侧边栏打开时显示 */
+.sidebar-close {
+    display: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-muted, #888);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.sidebar-close:hover {
+    background: var(--hover-bg, #2a2a2a);
+    color: var(--text, #fff);
+}
+
+/* 遮罩层 */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sidebar-overlay.visible {
+    display: block;
+    opacity: 1;
 }
 
 /* 图片响应式 */

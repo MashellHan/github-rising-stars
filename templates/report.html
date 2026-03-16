@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="../../assets/report.css">
 </head>
 <body>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
     
     <div class="app-container">
         <!-- 左侧边栏：历史报告 -->
         <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
             <div class="sidebar-header">
                 <a href="../../" class="logo">
                     <span>🌟</span> Rising Stars
@@ -85,7 +87,7 @@
                 const historyList = document.getElementById('history-list');
                 historyList.innerHTML = data.reports.map(r => `
                     <li class="nav-item ${r.date === currentDate ? 'active' : ''}">
-                        <a href="../${r.date}/" class="nav-link">
+                        <a href="../${r.date}/" class="nav-link" onclick="closeSidebar()">
                             📊 ${r.date}
                             ${r.date === currentDate ? '<span class="badge">当前</span>' : ''}
                             <span class="count">${r.projectCount}</span>
@@ -120,9 +122,27 @@
             });
         }
         
+        // 侧边栏控制
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('open');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
         }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        // ESC 键关闭侧边栏
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
         
         loadHistory();
         setupScrollSpy();
