@@ -1,4 +1,4 @@
-/* GitHub 新星速报 - 微信公众号风格 */
+/* GitHub 新星速报 - 微信公众号风格 V2 */
 :root {
     --bg: #ffffff;
     --text: #333333;
@@ -7,6 +7,7 @@
     --accent: #576b95;
     --code-bg: #f6f8fa;
     --highlight-bg: #fffbe6;
+    --section-blue: #1e80ff;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,22 +25,22 @@ body {
 
 /* Header */
 .article-header {
-    text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
 }
 
 .article-header h1 {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.4;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    text-align: left;
 }
 
 .article-header .meta {
     font-size: 14px;
     color: var(--text-muted);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
 }
 
 .article-header .meta a {
@@ -47,30 +48,45 @@ body {
     text-decoration: none;
 }
 
-/* Section Number Badge */
-.section-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    width: 56px;
-    height: 28px;
-    border-radius: 14px;
-    margin-right: 8px;
+.editor-info {
+    background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 15px;
 }
 
-.section-title {
-    display: flex;
+.editor-info strong {
+    color: var(--section-blue);
+}
+
+/* Section Number Badge - 微信风格 */
+.section-badge {
+    display: inline-flex;
     align-items: center;
     margin: 32px 0 20px;
 }
 
-.section-title h2 {
+.section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e80ff 0%, #0066ff 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+    min-width: 40px;
+    height: 26px;
+    padding: 0 12px;
+    border-radius: 13px;
+    margin-right: 12px;
+}
+
+.section-title {
     font-size: 18px;
     font-weight: 600;
+    color: var(--text);
 }
 
 /* Paragraph */
@@ -83,21 +99,22 @@ strong {
     color: var(--text);
 }
 
-/* Image */
+/* Image - 全宽显示 */
 .article-image {
-    margin: 20px 0;
+    margin: 24px -20px;
     text-align: center;
 }
 
 .article-image img {
+    width: 100%;
     max-width: 100%;
-    border-radius: 4px;
 }
 
 .article-image .caption {
     font-size: 14px;
     color: var(--text-muted);
     margin-top: 8px;
+    padding: 0 20px;
 }
 
 /* GIF Demo */
@@ -108,8 +125,7 @@ strong {
 
 .demo-gif img {
     max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    border-radius: 4px;
 }
 
 .demo-gif .caption {
@@ -121,12 +137,12 @@ strong {
 /* Code Block */
 pre {
     background: var(--code-bg);
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 16px;
     overflow-x: auto;
     margin: 16px 0;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 code {
@@ -143,11 +159,45 @@ p code {
 /* List */
 ul, ol {
     margin: 16px 0;
-    padding-left: 24px;
+    padding-left: 0;
+    list-style: none;
 }
 
 li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    padding-left: 0;
+    position: relative;
+}
+
+/* 带序号的列表项 */
+.numbered-list {
+    counter-reset: item;
+}
+
+.numbered-list li {
+    padding-left: 28px;
+}
+
+.numbered-list li::before {
+    counter-increment: item;
+    content: "(" counter(item) ")";
+    position: absolute;
+    left: 0;
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* 带圆点的列表项 */
+.bullet-list li {
+    padding-left: 20px;
+}
+
+.bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--section-blue);
+    font-weight: bold;
 }
 
 /* Highlight Box */
@@ -163,16 +213,35 @@ li {
     color: #d48806;
 }
 
-/* Project Link */
-.project-link {
+/* Star Badge */
+.star-badge {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0;
+    padding: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.star-badge .stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Project Link */
+.project-link {
     margin: 16px 0;
-    padding: 12px 16px;
-    background: var(--code-bg);
-    border-radius: 6px;
-    font-size: 14px;
+    font-size: 15px;
+}
+
+.project-link .label {
+    color: var(--text);
 }
 
 .project-link a {
@@ -181,48 +250,29 @@ li {
     word-break: break-all;
 }
 
-/* Stats Badge */
-.stats-inline {
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
-    margin: 16px 0;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 8px;
-    font-size: 15px;
+/* Component List - 核心组件 */
+.component-item {
+    margin-bottom: 16px;
 }
 
-.stats-inline .stat {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-/* Component List */
-.component-list {
-    margin: 20px 0;
-}
-
-.component-list strong {
-    color: var(--accent);
+.component-item strong {
+    color: var(--section-blue);
 }
 
 /* Footer */
 .article-footer {
     margin-top: 40px;
-    padding-top: 20px;
+    padding-top: 24px;
     border-top: 1px solid var(--border);
     text-align: center;
 }
 
-.article-footer .end-badge {
+.end-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: #f0f0f0;
-    padding: 8px 24px;
+    gap: 12px;
+    background: #f5f5f5;
+    padding: 10px 32px;
     border-radius: 20px;
     font-size: 14px;
     color: var(--text-muted);
@@ -249,6 +299,11 @@ li {
 
 .toc li {
     margin-bottom: 8px;
+    padding-left: 0;
+}
+
+.toc li::before {
+    display: none;
 }
 
 .toc a {
@@ -283,5 +338,9 @@ hr {
     
     .article-header h1 {
         font-size: 20px;
+    }
+    
+    .article-image {
+        margin: 24px -16px;
     }
 }
