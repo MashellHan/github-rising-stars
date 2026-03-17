@@ -1,6 +1,20 @@
 {
   "reports": [
     {
+      "date": "2026-03-18",
+      "title": "GitHub 新星速报",
+      "projectCount": 5,
+      "totalStars": 126477,
+      "topIndex": 140.6,
+      "projects": [
+        {"name": "garrytan/gstack", "stars": 19782, "index": 140.6},
+        {"name": "karpathy/autoresearch", "stars": 40076, "index": 116.8},
+        {"name": "HKUDS/CLI-Anything", "stars": 17641, "index": 93.0},
+        {"name": "paperclipai/paperclip", "stars": 27831, "index": 73.0},
+        {"name": "googleworkspace/cli", "stars": 21147, "index": 63.6}
+      ]
+    },
+    {
       "date": "2026-03-17",
       "title": "GitHub 新星速报",
       "projectCount": 5,
@@ -29,5 +43,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-17T02:15:00+08:00"
+  "lastUpdated": "2026-03-18T02:30:00+08:00"
 }
