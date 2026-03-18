@@ -1,6 +1,20 @@
 {
   "reports": [
     {
+      "date": "2026-03-19",
+      "title": "GitHub 新星速报",
+      "projectCount": 5,
+      "totalStars": 106050,
+      "topIndex": 124.0,
+      "projects": [
+        {"name": "garrytan/gstack", "stars": 23489, "index": 124.0},
+        {"name": "jarrodwatts/claude-hud", "stars": 6647, "index": 89.3},
+        {"name": "volcengine/OpenViking", "stars": 15676, "index": 78.6},
+        {"name": "karpathy/autoresearch", "stars": 41769, "index": 58.0},
+        {"name": "HKUDS/CLI-Anything", "stars": 18469, "index": 42.6}
+      ]
+    },
+    {
       "date": "2026-03-18",
       "title": "GitHub 新星速报",
       "projectCount": 5,
@@ -43,5 +57,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-18T02:30:00+08:00"
+  "lastUpdated": "2026-03-19T02:30:00+08:00"
 }
