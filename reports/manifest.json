@@ -1,6 +1,20 @@
 {
   "reports": [
     {
+      "date": "2026-03-20",
+      "title": "GitHub 新星速报",
+      "projectCount": 5,
+      "totalStars": 185539,
+      "topIndex": 109.5,
+      "projects": [
+        {"name": "garrytan/gstack", "stars": 27022, "index": 109.5},
+        {"name": "666ghj/MiroFish", "stars": 35571, "index": 93.9},
+        {"name": "volcengine/OpenViking", "stars": 16175, "index": 77.4},
+        {"name": "HKUDS/CLI-Anything", "stars": 19254, "index": 47.6},
+        {"name": "affaan-m/everything-claude-code", "stars": 87517, "index": 45.4}
+      ]
+    },
+    {
       "date": "2026-03-19",
       "title": "GitHub 新星速报",
       "projectCount": 5,
@@ -57,5 +71,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-19T02:30:00+08:00"
+  "lastUpdated": "2026-03-20T02:05:00+08:00"
 }
