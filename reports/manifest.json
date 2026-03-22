@@ -1,6 +1,20 @@
 {
   "reports": [
     {
+      "date": "2026-03-23",
+      "title": "GitHub 新星速报",
+      "projectCount": 5,
+      "totalStars": 77467,
+      "topIndex": 107.9,
+      "projects": [
+        {"name": "garrytan/gstack", "stars": 37365, "index": 107.9},
+        {"name": "NVIDIA/NemoClaw", "stars": 15201, "index": 99.0},
+        {"name": "THU-MAIC/OpenMAIC", "stars": 11105, "index": 86.4},
+        {"name": "aiming-lab/AutoResearchClaw", "stars": 7613, "index": 75.8},
+        {"name": "calesthio/Crucix", "stars": 6183, "index": 68.5}
+      ]
+    },
+    {
       "date": "2026-03-20",
       "title": "GitHub 新星速报",
       "projectCount": 5,
@@ -71,5 +85,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-20T02:05:00+08:00"
+  "lastUpdated": "2026-03-23T02:00:00+08:00"
 }
