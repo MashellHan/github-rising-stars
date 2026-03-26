@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个GitHub新星项目速报 | GitHub新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🌟</span> Rising Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个GitHub新星项目速报！ClawTeam、MiniMax Skills等火爆开源</h1>
+                    <p class="meta">
+                        <a href="../../">GitHub新星速报</a> · 2026年3月27日 · 周五
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>每天凌晨，我会自动扫描GitHub Trending，筛选出<strong>60天内创建、增长最快的高潜力项目</strong>，计算"新星指数"（周增长/√总Star），为你发现下一个可能爆发的开源项目。</p>
+                    <p>今天发现了<strong>5个新星项目</strong>，涵盖Agent集群智能、创业方法论Skills、AI开发技能集、代码知识图谱、通用CLI平台等热门领域。让我们一起来看看！</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Project 1: HKUDS/ClawTeam -->
+                <section id="clawteam" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">ClawTeam：Agent集群智能——一条命令让AI自组团队</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 3,713 Stars</span>
+                        <span class="stat">📈 指数 60.9</span>
+                        <span class="stat">🔧 Python</span>
+                        <span class="stat">📅 2026-03-17 创建</span>
+                    </div>
+                    
+                    <p><strong>ClawTeam</strong> 来自香港大学数据科学实验室（HKUDS），是一个让AI Agent自主组建"蜂群"协作的开源框架。它的核心理念非常直接：<strong>单个AI Agent很强，但一群AI Agent协同作战更强</strong>。在仅仅10天内就斩获了3,700+ Star，成为本周GitHub上增长最猛的新项目之一。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/clawteam.jpg" alt="ClawTeam GitHub仓库">
+                        <p class="caption">▲ ClawTeam GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>ClawTeam 的工作方式非常优雅：你只需给出一个目标（比如"用8块H100优化这个LLM训练"），<strong>Leader Agent 会自动拆解任务、生成子Agent、分配工作、实时协调</strong>。每个Worker Agent拥有独立的git worktree和tmux窗口，通过文件系统或ZeroMQ P2P通信，彼此之间可以发消息、共享发现、汇报进度。</p>
+                    
+                    <p>这不是又一个需要你写大量YAML编排逻辑的框架——<strong>Agent自己就是编排者</strong>。Claude Code、Codex、OpenClaw、nanobot等任何CLI Agent都能无缝接入。一个典型的用例是：Leader Agent在8块H100 GPU上部署8个研究Agent，自动设计了2430+实验，将val_bpb从1.044降到0.977——全程零人工干预。</p>
+                    
+                    <div class="highlight-box">
+                        <h4>💡 为什么值得关注？</h4>
+                        <ul>
+                            <li><strong>真正的Agent自组织：</strong>不是人类写编排代码，而是Agent自己用CLI命令（spawn、task、inbox）协调团队</li>
+                            <li><strong>零基础设施依赖：</strong>只需文件系统+tmux，无需Redis/Docker/云服务，状态全存JSON文件</li>
+                            <li><strong>TOML团队模板：</strong>一条命令启动7人AI对冲基金团队（巴菲特分析师、技术分析师、风控经理……）</li>
+                            <li><strong>兼容一切CLI Agent：</strong>Claude Code、Codex、Kimi CLI、自定义脚本均可作为团队成员</li>
+                            <li><strong>Web UI + tmux看板：</strong>实时监控所有Agent的工作状态，像看一群蚂蚁搬家一样有趣</li>
+                        </ul>
+                    </div>
+                    
+                    <p>ClawTeam代表了AI Agent从"单兵作战"到"集群智能"的范式转移。当前v0.3已支持文件+P2P传输、Web UI、多用户和团队模板，路线图中还有Redis传输、共享状态层和Agent市场。如果你在做需要多Agent协作的研究或工程项目，这是目前最轻量、最灵活的选择之一。</p>
+                    
+                    <p>🔗 <a href="https://github.com/HKUDS/ClawTeam" target="_blank">github.com/HKUDS/ClawTeam</a></p>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 2: slavingia/skills -->
+                <section id="slavingia-skills" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">slavingia/skills：Gumroad创始人的极简创业方法论Claude Code技能包</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 3,494 Stars</span>
+                        <span class="stat">📈 指数 59.1</span>
+                        <span class="stat">🔧 Markdown</span>
+                        <span class="stat">📅 2026-03-23 创建</span>
+                    </div>
+                    
+                    <p><strong>slavingia/skills</strong> 可能是本周最"非传统"的GitHub热门项目——它不是一个软件工具，而是<strong>Gumroad创始人Sahil Lavingia</strong>将自己的畅销书《The Minimalist Entrepreneur》（极简创业者）转化成了一套Claude Code技能集。4天内狂揽3,500 Star，创下了"纯内容仓库"的增长纪录。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/slavingia-skills.jpg" alt="slavingia/skills GitHub仓库">
+                        <p class="caption">▲ slavingia/skills GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>这套技能包包含10个Claude Code Skills，完整覆盖了从0到1创业的全流程：<code>/find-community</code>（寻找社区）→ <code>/validate-idea</code>（验证想法）→ <code>/mvp</code>（构建最小可行产品）→ <code>/processize</code>（流程化）→ <code>/first-customers</code>（获取前100个客户）→ <code>/pricing</code>（定价策略）→ <code>/marketing-plan</code>（营销计划）→ <code>/grow-sustainably</code>（可持续增长）→ <code>/company-values</code>（公司价值观）→ <code>/minimalist-review</code>（极简审查）。</p>
+                    
+                    <p>安装方式极其简单：在Claude Code中执行 <code>/plugin marketplace add slavingia/skills</code> 即可。每个Skill都内置了Sahil多年创业经验的决策框架——当你犹豫该不该做某个功能、如何定价、要不要融资时，这些Skill会以极简主义创业者的视角帮你思考。</p>
+                    
+                    <div class="highlight-box">
+                        <h4>💡 为什么值得关注？</h4>
+                        <ul>
+                            <li><strong>名人效应+实用主义：</strong>Sahil Lavingia不是在卖概念，他把真金白银的创业经验结构化了</li>
+                            <li><strong>新型知识传播方式：</strong>从书→课程→播客→AI Skill，这是"知识产品"的下一个形态</li>
+                            <li><strong>Claude Code生态繁荣的信号：</strong>当知名创始人亲自下场做Skill，说明这个生态已到引爆点</li>
+                            <li><strong>实操导向：</strong>不是空洞的理论，每个Skill都会引导你做具体的决策和行动</li>
+                            <li><strong>开源+可扩展：</strong>社区已在贡献新Skill（如processize来自mvanhorn），生态在自然生长</li>
+                        </ul>
+                    </div>
+                    
+                    <p>这个仓库的火爆也揭示了一个趋势：<strong>AI Agent技能生态正在成为新的"App Store"</strong>。未来不是人人学编程，而是人人写Skill——用自然语言把自己的专业知识封装成AI可执行的方法论。Sahil Lavingia的这个仓库，可能是这个时代的第一批"畅销App"。</p>
+                    
+                    <p>🔗 <a href="https://github.com/slavingia/skills" target="_blank">github.com/slavingia/skills</a></p>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 3: MiniMax-AI/skills -->
+                <section id="minimax-skills" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">MiniMax-AI/skills：MiniMax官方AI开发技能集——全栈开发者的瑞士军刀</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 5,982 Stars</span>
+                        <span class="stat">📈 指数 51.7</span>
+                        <span class="stat">🔧 C#</span>
+                        <span class="stat">📅 2026-03-17 创建</span>
+                    </div>
+                    
+                    <p><strong>MiniMax-AI/skills</strong> 是AI公司MiniMax发布的官方开发技能集合，覆盖了从前端到后端、从移动端到桌面端的<strong>全栈开发场景</strong>。这不是一个简单的代码片段仓库——每个Skill都是一套完整的、经过MiniMax内部团队验证的开发工作流，包含设计规范、架构模式、质量检查和最佳实践。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/minimax-skills.jpg" alt="MiniMax-AI/skills GitHub仓库">
+                        <p class="caption">▲ MiniMax-AI/skills GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>技能集涵盖了令人印象深刻的广度：<strong>全栈前端开发</strong>（DSAR设计规范、UIUX框架、Three.js/Canvas/D3可视化）、<strong>后端集成</strong>（REST API设计、LINT会话管理、实时功能）、<strong>Android原生开发</strong>（Material Design 3、Kotlin/Jetpack Compose、MVDC架构）、<strong>iOS开发</strong>（SwiftUI、CoreData、辅助功能）、<strong>Flutter跨平台</strong>、<strong>React Native</strong>和<strong>Expo开发</strong>。甚至包括了<strong>GLSL着色器技术</strong>（光线追踪、粒子系统、程序化生成）和<strong>媒体处理</strong>（FFmpeg命令行、图片转视频）。</p>
+                    
+                    <p>每个Skill都支持在Claude Code、Cursor、Codex和OpenCode中一键安装使用。MiniMax还提供了自动化验证脚本和PR审查工作流，确保社区贡献的质量。</p>
+                    
+                    <div class="highlight-box">
+                        <h4>💡 为什么值得关注？</h4>
+                        <ul>
+                            <li><strong>企业级质量：</strong>这不是个人项目，而是MiniMax团队系统性整理的生产级开发规范</li>
+                            <li><strong>多平台覆盖：</strong>一个仓库搞定前端、后端、Android、iOS、Flutter、React Native、桌面……</li>
+                            <li><strong>实战导向：</strong>每个Skill都包含具体的架构决策、代码风格指南和质量检查清单</li>
+                            <li><strong>生态开放：</strong>PR格式规范、自动验证脚本，社区可以轻松贡献新Skill</li>
+                            <li><strong>中国AI公司的Skills战略：</strong>MiniMax在Agent生态上的布局，值得关注</li>
+                        </ul>
+                    </div>
+                    
+                    <p>MiniMax-AI/skills 的意义在于：<strong>大型AI公司正在将自己的工程经验开源为Agent Skills</strong>。这意味着未来开发者不再只是用AI生成代码，而是用AI执行经过验证的完整开发方法论。10天6,000 Star证明了市场对"高质量、结构化AI开发技能"的巨大需求。</p>
+                    
+                    <p>🔗 <a href="https://github.com/MiniMax-AI/skills" target="_blank">github.com/MiniMax-AI/skills</a></p>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 4: Lum1104/Understand-Anything -->
+                <section id="understand-anything" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">Understand-Anything：把代码库变成可交互的知识图谱</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 6,367 Stars</span>
+                        <span class="stat">📈 指数 37.6</span>
+                        <span class="stat">🔧 TypeScript</span>
+                        <span class="stat">📅 2026-03-15 创建</span>
+                    </div>
+                    
+                    <p><strong>Understand-Anything</strong> 解决了一个每个开发者都头疼的问题：<strong>快速理解一个陌生的大型代码库</strong>。它是一组Claude Code Skills，能将任何代码仓库自动转化为交互式知识图谱，你可以在图谱上浏览、搜索、提问——就像有一个对整个项目了如指掌的同事随时在旁边解答。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/understand-anything.jpg" alt="Understand-Anything GitHub仓库">
+                        <p class="caption">▲ Understand-Anything GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>它的工作流程很简单但强大：首先通过代码分析构建一个<strong>交互式知识图谱</strong>，展示模块间的依赖关系、函数调用链和数据流向；然后提供<strong>全局搜索</strong>功能，让你能用自然语言查询代码库中的任何概念；最后，你可以对图谱上的任何节点<strong>直接提问</strong>，AI会结合上下文给出准确的解释。</p>
+                    
+                    <p>Understand-Anything 支持多平台运行，不仅限于Claude Code，Codex等其他AI编程工具同样可以使用。项目还包含<strong>Codified Search</strong>（结构化搜索）、<strong>GIT Project Analysis</strong>（Git项目分析）和<strong>Multi-Agent Pipeline</strong>（多Agent管线）等高级功能，能处理从小型库到企业级巨型代码库的各种规模。</p>
+                    
+                    <div class="highlight-box">
+                        <h4>💡 为什么值得关注？</h4>
+                        <ul>
+                            <li><strong>解决真实痛点：</strong>新人入职、接手遗留项目、开源贡献——代码理解是最大的时间黑洞</li>
+                            <li><strong>知识图谱可视化：</strong>不是简单的代码索引，而是带有语义理解的交互式关系图</li>
+                            <li><strong>多平台兼容：</strong>Claude Code、Codex等都能用，不绑定特定工具</li>
+                            <li><strong>12天6,300+ Star：</strong>增长速度说明了开发者社区对代码理解工具的渴求</li>
+                            <li><strong>Resource Adaptive：</strong>能根据系统资源自动调整分析深度，笔记本到工作站都能跑</li>
+                        </ul>
+                    </div>
+                    
+                    <p>代码理解一直是AI编程领域的"最后一公里"——写代码AI已经很擅长了，但<strong>读懂已有代码</strong>才是日常工作中的最大挑战。Understand-Anything 填补了这个空白，让"理解代码"变得像"浏览维基百科"一样直观。</p>
+                    
+                    <p>🔗 <a href="https://github.com/Lum1104/Understand-Anything" target="_blank">github.com/Lum1104/Understand-Anything</a></p>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 5: jackwener/opencli -->
+                <section id="opencli" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">OpenCLI：把一切网站和工具变成命令行——AI Agent的通用工具箱</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 7,520 Stars</span>
+                        <span class="stat">📈 指数 34.6</span>
+                        <span class="stat">🔧 TypeScript</span>
+                        <span class="stat">📅 2026-03-14 创建</span>
+                    </div>
+                    
+                    <p><strong>OpenCLI</strong> 的愿景很疯狂但很迷人：<strong>把任何网站、Electron应用或本地二进制文件都变成标准化的命令行接口</strong>。它定位为"通用CLI Hub和AI原生运行时"——不是为了让人类更方便地用命令行，而是为了让<strong>AI Agent能发现、学习和执行任何工具</strong>。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/opencli.jpg" alt="OpenCLI GitHub仓库">
+                        <p class="caption">▲ OpenCLI GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>OpenCLI 内置了对<strong>数十种服务</strong>的CLI封装：GitHub、GitLab、Figma、Notion、Slack、Discord、Twitter/X、YouTube、Spotify、AWS、GCP、Azure、Docker、Kubernetes……甚至包括 Netflix（管理你的片单）和 Uber（叫车和查看行程）。每个CLI模块都遵循统一的 <code>AGENT.md</code> 接口规范，让AI Agent能通过标准方式发现和使用这些工具。</p>
+                    
+                    <p>它的核心创新在于<strong>AI-Native Runtime</strong>：不是简单地包装API，而是提供了一层语义理解层。AI Agent可以用自然语言描述需求（"帮我在GitHub上创建一个issue并@团队成员"），OpenCLI会自动映射到对应的CLI命令。同时它支持<strong>插件系统</strong>和<strong>自定义适配器</strong>，社区可以为任何新服务编写CLI模块。</p>
+                    
+                    <div class="highlight-box">
+                        <h4>💡 为什么值得关注？</h4>
+                        <ul>
+                            <li><strong>Agent工具生态的基础设施：</strong>解决了AI Agent"会思考但没手"的核心问题</li>
+                            <li><strong>统一接口标准：</strong>AGENT.md规范让不同来源的工具都能被AI统一发现和调用</li>
+                            <li><strong>覆盖面惊人：</strong>开发工具、云服务、社交媒体、生产力工具……几乎无所不包</li>
+                            <li><strong>两周7,500 Star：</strong>开发者和AI Agent建设者们的投票，说明这是刚需</li>
+                            <li><strong>开源+社区驱动：</strong>任何人都能贡献新的CLI模块，生态在快速扩展</li>
+                        </ul>
+                    </div>
+                    
+                    <p>OpenCLI 所代表的趋势是：<strong>未来的软件不是"AI-friendly"的，而是"AI-native"的</strong>。当每个工具都有标准化的CLI接口和AGENT.md描述时，AI Agent就能像人类使用GUI一样自由地操作整个数字世界。这可能是"Agent互联网"的早期基础设施。</p>
+                    
+                    <p>🔗 <a href="https://github.com/jackwener/opencli" target="_blank">github.com/jackwener/opencli</a></p>
+                </section>
+                
+                <hr>
+                
+                <!-- Summary -->
+                <section class="summary-section">
+                    <h2>📊 今日总结</h2>
+                    
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>项目</th>
+                                <th>Stars</th>
+                                <th>新星指数</th>
+                                <th>语言</th>
+                                <th>关键词</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>🥇</td>
+                                <td><a href="#clawteam">HKUDS/ClawTeam</a></td>
+                                <td>3,713</td>
+                                <td>60.9</td>
+                                <td>Python</td>
+                                <td>Agent集群智能</td>
+                            </tr>
+                            <tr>
+                                <td>🥈</td>
+                                <td><a href="#slavingia-skills">slavingia/skills</a></td>
+                                <td>3,494</td>
+                                <td>59.1</td>
+                                <td>Markdown</td>
+                                <td>极简创业Skills</td>
+                            </tr>
+                            <tr>
+                                <td>🥉</td>
+                                <td><a href="#minimax-skills">MiniMax-AI/skills</a></td>
+                                <td>5,982</td>
+                                <td>51.7</td>
+                                <td>C#</td>
+                                <td>全栈开发技能集</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><a href="#understand-anything">Lum1104/Understand-Anything</a></td>
+                                <td>6,367</td>
+                                <td>37.6</td>
+                                <td>TypeScript</td>
+                                <td>代码知识图谱</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><a href="#opencli">jackwener/opencli</a></td>
+                                <td>7,520</td>
+                                <td>34.6</td>
+                                <td>TypeScript</td>
+                                <td>通用AI CLI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box">
+                        <h4>🔍 今日观察</h4>
+                        <p>今天的Top 5呈现出一个非常清晰的主题：<strong>Agent Skills生态正在爆发</strong>。5个项目中有3个直接与"Skills"相关（slavingia/skills、MiniMax-AI/skills、Understand-Anything），1个是Agent集群基础设施（ClawTeam），1个是Agent工具接口标准（OpenCLI）。</p>
+                        <p>这意味着AI Agent的竞争正从"谁的模型更强"转向"<strong>谁的技能生态更丰富</strong>"。就像智能手机时代的App Store决定了iOS vs Android的胜负一样，Agent时代的Skills生态将决定哪个平台最终胜出。</p>
+                        <p>另一个值得注意的趋势：<strong>非代码仓库也能成为GitHub热门</strong>。slavingia/skills几乎没有代码，全是Markdown文档——但4天3,500 Star。这预示着GitHub正从"代码托管平台"向"知识+技能托管平台"进化。</p>
+                    </div>
+                </section>
+                
+            </article>
+        </main>
+    </div>
+    
+    <script src="../../assets/app.js"></script>
+</body>
+</html>

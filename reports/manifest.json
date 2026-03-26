@@ -1,17 +1,73 @@
 {
   "reports": [
     {
+      "date": "2026-03-27",
+      "title": "5个GitHub新星项目速报！ClawTeam、MiniMax Skills等火爆开源",
+      "projects": [
+        {
+          "name": "HKUDS/ClawTeam",
+          "stars": 3713,
+          "index": 60.9,
+          "language": "Python"
+        },
+        {
+          "name": "slavingia/skills",
+          "stars": 3494,
+          "index": 59.1,
+          "language": "Markdown"
+        },
+        {
+          "name": "MiniMax-AI/skills",
+          "stars": 5982,
+          "index": 51.7,
+          "language": "C#"
+        },
+        {
+          "name": "Lum1104/Understand-Anything",
+          "stars": 6367,
+          "index": 37.6,
+          "language": "TypeScript"
+        },
+        {
+          "name": "jackwener/opencli",
+          "stars": 7520,
+          "index": 34.6,
+          "language": "TypeScript"
+        }
+      ]
+    },
+    {
       "date": "2026-03-25",
       "title": "GitHub 新星速报",
       "projectCount": 5,
       "totalStars": 145447,
       "topIndex": 113.6,
       "projects": [
-        {"name": "garrytan/gstack", "stars": 44541, "index": 113.6},
-        {"name": "NVIDIA/NemoClaw", "stars": 16246, "index": 99.1},
-        {"name": "karpathy/autoresearch", "stars": 53884, "index": 90.2},
-        {"name": "aiming-lab/AutoResearchClaw", "stars": 8366, "index": 71.1},
-        {"name": "HKUDS/CLI-Anything", "stars": 22410, "index": 65.5}
+        {
+          "name": "garrytan/gstack",
+          "stars": 44541,
+          "index": 113.6
+        },
+        {
+          "name": "NVIDIA/NemoClaw",
+          "stars": 16246,
+          "index": 99.1
+        },
+        {
+          "name": "karpathy/autoresearch",
+          "stars": 53884,
+          "index": 90.2
+        },
+        {
+          "name": "aiming-lab/AutoResearchClaw",
+          "stars": 8366,
+          "index": 71.1
+        },
+        {
+          "name": "HKUDS/CLI-Anything",
+          "stars": 22410,
+          "index": 65.5
+        }
       ]
     },
     {
@@ -21,11 +77,31 @@
       "totalStars": 77467,
       "topIndex": 107.9,
       "projects": [
-        {"name": "garrytan/gstack", "stars": 37365, "index": 107.9},
-        {"name": "NVIDIA/NemoClaw", "stars": 15201, "index": 99.0},
-        {"name": "THU-MAIC/OpenMAIC", "stars": 11105, "index": 86.4},
-        {"name": "aiming-lab/AutoResearchClaw", "stars": 7613, "index": 75.8},
-        {"name": "calesthio/Crucix", "stars": 6183, "index": 68.5}
+        {
+          "name": "garrytan/gstack",
+          "stars": 37365,
+          "index": 107.9
+        },
+        {
+          "name": "NVIDIA/NemoClaw",
+          "stars": 15201,
+          "index": 99.0
+        },
+        {
+          "name": "THU-MAIC/OpenMAIC",
+          "stars": 11105,
+          "index": 86.4
+        },
+        {
+          "name": "aiming-lab/AutoResearchClaw",
+          "stars": 7613,
+          "index": 75.8
+        },
+        {
+          "name": "calesthio/Crucix",
+          "stars": 6183,
+          "index": 68.5
+        }
       ]
     },
     {
@@ -35,11 +111,31 @@
       "totalStars": 185539,
       "topIndex": 109.5,
       "projects": [
-        {"name": "garrytan/gstack", "stars": 27022, "index": 109.5},
-        {"name": "666ghj/MiroFish", "stars": 35571, "index": 93.9},
-        {"name": "volcengine/OpenViking", "stars": 16175, "index": 77.4},
-        {"name": "HKUDS/CLI-Anything", "stars": 19254, "index": 47.6},
-        {"name": "affaan-m/everything-claude-code", "stars": 87517, "index": 45.4}
+        {
+          "name": "garrytan/gstack",
+          "stars": 27022,
+          "index": 109.5
+        },
+        {
+          "name": "666ghj/MiroFish",
+          "stars": 35571,
+          "index": 93.9
+        },
+        {
+          "name": "volcengine/OpenViking",
+          "stars": 16175,
+          "index": 77.4
+        },
+        {
+          "name": "HKUDS/CLI-Anything",
+          "stars": 19254,
+          "index": 47.6
+        },
+        {
+          "name": "affaan-m/everything-claude-code",
+          "stars": 87517,
+          "index": 45.4
+        }
       ]
     },
     {
@@ -49,11 +145,31 @@
       "totalStars": 106050,
       "topIndex": 124.0,
       "projects": [
-        {"name": "garrytan/gstack", "stars": 23489, "index": 124.0},
-        {"name": "jarrodwatts/claude-hud", "stars": 6647, "index": 89.3},
-        {"name": "volcengine/OpenViking", "stars": 15676, "index": 78.6},
-        {"name": "karpathy/autoresearch", "stars": 41769, "index": 58.0},
-        {"name": "HKUDS/CLI-Anything", "stars": 18469, "index": 42.6}
+        {
+          "name": "garrytan/gstack",
+          "stars": 23489,
+          "index": 124.0
+        },
+        {
+          "name": "jarrodwatts/claude-hud",
+          "stars": 6647,
+          "index": 89.3
+        },
+        {
+          "name": "volcengine/OpenViking",
+          "stars": 15676,
+          "index": 78.6
+        },
+        {
+          "name": "karpathy/autoresearch",
+          "stars": 41769,
+          "index": 58.0
+        },
+        {
+          "name": "HKUDS/CLI-Anything",
+          "stars": 18469,
+          "index": 42.6
+        }
       ]
     },
     {
@@ -63,11 +179,31 @@
       "totalStars": 126477,
       "topIndex": 140.6,
       "projects": [
-        {"name": "garrytan/gstack", "stars": 19782, "index": 140.6},
-        {"name": "karpathy/autoresearch", "stars": 40076, "index": 116.8},
-        {"name": "HKUDS/CLI-Anything", "stars": 17641, "index": 93.0},
-        {"name": "paperclipai/paperclip", "stars": 27831, "index": 73.0},
-        {"name": "googleworkspace/cli", "stars": 21147, "index": 63.6}
+        {
+          "name": "garrytan/gstack",
+          "stars": 19782,
+          "index": 140.6
+        },
+        {
+          "name": "karpathy/autoresearch",
+          "stars": 40076,
+          "index": 116.8
+        },
+        {
+          "name": "HKUDS/CLI-Anything",
+          "stars": 17641,
+          "index": 93.0
+        },
+        {
+          "name": "paperclipai/paperclip",
+          "stars": 27831,
+          "index": 73.0
+        },
+        {
+          "name": "googleworkspace/cli",
+          "stars": 21147,
+          "index": 63.6
+        }
       ]
     },
     {
@@ -77,11 +213,31 @@
       "totalStars": 105322,
       "topIndex": 128.5,
       "projects": [
-        {"name": "garrytan/gstack", "stars": 16514, "index": 128.5},
-        {"name": "karpathy/autoresearch", "stars": 38111, "index": 117.1},
-        {"name": "HKUDS/CLI-Anything", "stars": 16407, "index": 76.9},
-        {"name": "paperclipai/paperclip", "stars": 26378, "index": 56.8},
-        {"name": "tanweai/pua", "stars": 7912, "index": 53.4}
+        {
+          "name": "garrytan/gstack",
+          "stars": 16514,
+          "index": 128.5
+        },
+        {
+          "name": "karpathy/autoresearch",
+          "stars": 38111,
+          "index": 117.1
+        },
+        {
+          "name": "HKUDS/CLI-Anything",
+          "stars": 16407,
+          "index": 76.9
+        },
+        {
+          "name": "paperclipai/paperclip",
+          "stars": 26378,
+          "index": 56.8
+        },
+        {
+          "name": "tanweai/pua",
+          "stars": 7912,
+          "index": 53.4
+        }
       ]
     },
     {
@@ -91,11 +247,31 @@
       "totalStars": 1163,
       "topIndex": 98.0,
       "projects": [
-        {"name": "sstklen/trump-code", "stars": 198, "index": 98.0},
-        {"name": "Lum1104/Understand-Anything", "stars": 188, "index": 96.0},
-        {"name": "collaborator-ai/collab-public", "stars": 217, "index": 95.0},
-        {"name": "deusyu/translate-book", "stars": 198, "index": 88.0},
-        {"name": "Infatoshi/OpenSquirrel", "stars": 362, "index": 82.0}
+        {
+          "name": "sstklen/trump-code",
+          "stars": 198,
+          "index": 98.0
+        },
+        {
+          "name": "Lum1104/Understand-Anything",
+          "stars": 188,
+          "index": 96.0
+        },
+        {
+          "name": "collaborator-ai/collab-public",
+          "stars": 217,
+          "index": 95.0
+        },
+        {
+          "name": "deusyu/translate-book",
+          "stars": 198,
+          "index": 88.0
+        },
+        {
+          "name": "Infatoshi/OpenSquirrel",
+          "stars": 362,
+          "index": 82.0
+        }
       ]
     }
   ],
