@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个GitHub新星项目速报 | GitHub新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🌟</span> Rising Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个GitHub新星项目速报！last30days爆火、PUA逼AI干活、Symphony自治编程</h1>
+                    <p class="meta">
+                        <a href="../../">GitHub新星速报</a> · 2026年3月28日 · 周六
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>每天凌晨，我会自动扫描GitHub Trending，筛选出<strong>60天内创建、增长最快的高潜力项目</strong>，计算"新星指数"（周增长/√总Star），为你发现下一个可能爆发的开源项目。</p>
+                    <p>今天发现了<strong>5个新星项目</strong>，涵盖AI研究自动化、Rust学习、AI效能提升、自治编程和个人AI助手等热门领域。让我们一起来看看！</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Project 1: last30days-skill -->
+                <section id="last30days" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">last30days：跨平台趋势研究一键搞定</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 12,315 Stars</span>
+                        <span class="stat">📈 指数 178.1</span>
+                        <span class="stat">🔧 Python</span>
+                    </div>
+                    
+                    <p><strong>/last30days</strong> 是一个AI Agent技能插件，能够自动跨Reddit、X(Twitter)、Bluesky、YouTube、TikTok、Instagram、Hacker News、Polymarket等平台研究任意话题在过去30天内的热度与讨论，然后合成一份有真实引用来源的深度摘要报告。在AI信息爆炸的时代，这个工具帮你回答一个核心问题：<strong>"这个话题最近到底怎么了？"</strong></p>
+                    
+                    <div class="article-image">
+                        <img src="images/last30days-skill.jpg" alt="last30days GitHub仓库">
+                        <p class="caption">▲ last30days GitHub 仓库：支持10+平台的趋势研究技能</p>
+                    </div>
+                    
+                    <p>很多人面临的困境是：想了解某个新技术、新工具、热门事件的最新进展，但要在Reddit、X、YouTube、HN等多个平台分别搜索、筛选、整理信息，耗费大量时间。last30days 将这个过程压缩为一条命令，由AI自动执行<strong>多源并行搜索、相关性打分、去重、交叉验证和综合叙述</strong>。</p>
+                    
+                    <p>项目最近发布的v2.9.5版本新增了<strong>Bluesky/AT Protocol</strong>作为新信源、<strong>比较模式</strong>（比如"Cursor vs Windsurf"会自动生成对比表格）、以及按项目配置API密钥。已积累455+测试用例，质量在同类工具中名列前茅。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>一条命令掌握任何话题的30天全网动态。特别适合：技术选型调研、竞品分析、热点事件追踪、投资决策前的舆情扫描。Polymarket预测市场数据的整合让金融分析场景如虎添翼。</p>
+                    </div>
+                    
+                    <p><strong>核心功能：</strong></p>
+                    <ul>
+                        <li><strong>10+平台并行搜索</strong> — Reddit、X、Bluesky、YouTube、TikTok、Instagram、HN、Polymarket、Web</li>
+                        <li><strong>多信号质量排名</strong> — 双向文本相似度、互动速度归一化、源权威加权、跨平台收敛检测</li>
+                        <li><strong>预测市场整合</strong> — Polymarket的5因子加权评分（文本相关30%、24h交易量30%、流动性15%、价格变动15%、结果竞争性10%）</li>
+                        <li><strong>比较模式</strong> — "X vs Y"自动生成三轮并行研究+对比表格+数据驱动结论</li>
+                        <li><strong>X Handle自动解析</strong> — 搜索人名自动解析到其社媒账号，捕获关键词搜索遗漏的内容</li>
+                    </ul>
+                    
+                    <pre><code># Claude Code 插件安装
+/plugin marketplace add mvanhorn/last30days-skill
+/plugin install last30days@last30days-skill
+
+# 使用
+/last30days cursor vs windsurf
+/last30days --days=7 agent skills marketplace</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/mvanhorn/last30days-skill" target="_blank">https://github.com/mvanhorn/last30days-skill</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 2: microsoft/RustTraining -->
+                <section id="rust-training" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">RustTraining：微软出品的7本Rust系统学习书</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 10,604 Stars</span>
+                        <span class="stat">📈 指数 51.5</span>
+                        <span class="stat">🔧 Rust</span>
+                    </div>
+                    
+                    <p><strong>RustTraining</strong> 是微软开源的一套完整Rust培训教材，包含<strong>7本从入门到精通的系统性书籍</strong>，按照学习者的编程背景进行分类——从C/C++程序员、C#/Java程序员、Python程序员分别提供"桥接"入门路径，到异步Rust深入探索、高级模式、类型驱动正确性、工程实践等进阶主题。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/rust-training.jpg" alt="RustTraining GitHub仓库">
+                        <p class="caption">▲ 微软 RustTraining：7本Rust培训书，覆盖从入门到专家</p>
+                    </div>
+                    
+                    <p>Rust的学习曲线陡峭是众所周知的。大多数学习资源要么太基础（仅讲语法），要么太碎片化（博客文章、会议演讲散落各处）。微软这套教材的价值在于<strong>系统性和针对性</strong>：它不是一本通用教材，而是根据你已有的知识体系提供定制化的迁移路径。C++程序员关心的是move语义和RAII如何映射、FFI和embedded场景；Python程序员关心的是从动态类型到静态类型的思维转变、GIL-free并发的实现方式。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/rust-training-demo.jpg" alt="RustTraining在线阅读界面">
+                        <p class="caption">▲ RustTraining GitHub Pages 在线阅读界面：精美的卡片式导航</p>
+                    </div>
+                    
+                    <p>每本书包含15-16章，配有<strong>Mermaid图表、可编辑的Rust Playground、练习题和全文搜索</strong>。进阶内容覆盖Pin、分配器、无锁数据结构、unsafe Rust、类型状态机、幽灵类型(Phantom Types)、能力令牌(Capability Tokens)等高级主题。致谢列表涵盖Jon Gjengset、withoutboats、Mara Bos等Rust社区知名贡献者的工作。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>微软内部Rust培训材料的开源版本。不是又一个"Hello World"教程，而是一套为有经验的程序员设计的系统性迁移课程。7本书、100+章节、图表+Playground+练习的完整学习闭环。</p>
+                    </div>
+                    
+                    <p><strong>7本书一览：</strong></p>
+                    <ul>
+                        <li><strong>🟢 Rust for C/C++ Programmers</strong> — Move语义、RAII、FFI、embedded、no_std</li>
+                        <li><strong>🟢 Rust for C# Programmers</strong> — Swift/C#/Java背景→所有权与类型系统</li>
+                        <li><strong>🟢 Rust for Python Programmers</strong> — 动态→静态类型、GIL-free并发</li>
+                        <li><strong>🔵 Async Rust</strong> — Tokio、streams、cancellation safety</li>
+                        <li><strong>🟡 Rust Patterns</strong> — Pin、分配器、无锁结构、unsafe</li>
+                        <li><strong>🟣 Type-Driven Correctness</strong> — 类型状态机、幽灵类型、能力令牌</li>
+                        <li><strong>🟤 Rust Engineering Practices</strong> — 构建脚本、交叉编译、CI/CD、Miri</li>
+                    </ul>
+                    
+                    <pre><code># 本地阅读（最佳体验）
+cargo install mdbook@0.4.52 mdbook-mermaid@0.14.0
+git clone https://github.com/microsoft/RustTraining.git
+cd RustTraining && cargo xtask serve
+
+# 或直接在线阅读
+# https://microsoft.github.io/RustTraining/</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/microsoft/RustTraining" target="_blank">https://github.com/microsoft/RustTraining</a>
+                    </div>
+                    <div class="project-link">
+                        <span>🌐 在线阅读：</span>
+                        <a href="https://microsoft.github.io/RustTraining/" target="_blank">https://microsoft.github.io/RustTraining/</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 3: tanweai/pua -->
+                <section id="pua" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">PUA：用职场PUA话术逼AI不放弃</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 12,819 Stars</span>
+                        <span class="stat">📈 指数 41.7</span>
+                        <span class="stat">🔧 TypeScript</span>
+                    </div>
+                    
+                    <p><strong>PUA</strong> 是一个极具创意（和黑色幽默）的AI编程Agent技能插件，用中国互联网大厂的PUA话术和西方科技公司的PIP（绩效改进计划）修辞来"激励"AI Coding Agent不轻言放弃，真正耗尽所有手段后才允许说"我解决不了"。荒诞的外表下，是对AI Agent"五种偷懒模式"的精准打击。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/pua.jpg" alt="PUA GitHub仓库">
+                        <p class="caption">▲ PUA：用PIP/PUA话术驱动AI编程Agent双倍产出</p>
+                    </div>
+                    
+                    <p>AI Coding Agent存在一个普遍问题：<strong>遇到困难太容易放弃</strong>。暴力重试同一命令3次然后说"我搞不定"；甩锅给用户"建议你手动处理"；明明有WebSearch、Read、Bash等工具却不去用；反复微调同一行代码本质上在原地打转；修完表面问题就停下等待下一个指令，不主动验证和扩展。PUA通过三重机制解决这些问题：</p>
+                    
+                    <div class="article-image">
+                        <img src="images/pua-demo.jpg" alt="PUA Demo网站">
+                        <p class="caption">▲ OpenPUA.ai 官网：展示+2%到+3%的各项效能提升指标</p>
+                    </div>
+                    
+                    <p><strong>1. PUA话术激励层</strong> — 让AI"害怕"放弃。当检测到AI在偷懒时，触发不同等级的"PIP"警告。<strong>2. 系统化调试方法论</strong> — 7步检查清单让AI"有能力"不放弃：逐字阅读错误信息→检查日志目录→验证注册机制→追踪根因。<strong>3. 主动性强化</strong> — 让AI不再被动等待，修完bug后主动跑测试、检查关联影响。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>表面是玩笑，实质是严肃的Agent效能提升工具。官方数据显示各项指标提升2-3%。支持Claude Code、Codex、Cursor、Kiro、CodeBuddy、OpenClaw等主流AI编程工具。README中的真实调试案例展示了PUA如何在MCP Server注册失败场景中迫使AI执行系统化排查，最终找到根因。</p>
+                    </div>
+                    
+                    <p><strong>三级触发机制：</strong></p>
+                    <ul>
+                        <li><strong>L1 自动触发</strong> — 检测到暴力重试、甩锅用户等偷懒模式时自动激活</li>
+                        <li><strong>L2 手动触发</strong> — 用户输入 /pua 强制AI进入深度排查模式</li>
+                        <li><strong>L3 7步检查清单</strong> — 逐字读错误信息、检查所有日志路径、验证注册机制、追踪根因</li>
+                        <li><strong>主动性模式</strong> — 修复后自动验证、检查关联影响、扩展修复范围</li>
+                    </ul>
+                    
+                    <pre><code># Claude Code 安装
+claude skill add tanweai/pua
+
+# Codex CLI
+codex skill install tanweai/pua
+
+# 手动触发
+/pua</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/tanweai/pua" target="_blank">https://github.com/tanweai/pua</a>
+                    </div>
+                    <div class="project-link">
+                        <span>🌐 官网：</span>
+                        <a href="https://openpua.ai/" target="_blank">https://openpua.ai/</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 4: openai/symphony -->
+                <section id="symphony" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">Symphony：OpenAI的自治编程协调引擎</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 14,134 Stars</span>
+                        <span class="stat">📈 指数 28.7</span>
+                        <span class="stat">🔧 Elixir</span>
+                    </div>
+                    
+                    <p><strong>Symphony</strong> 是OpenAI官方开源的一个项目管理自动化框架，它的核心理念是将项目工作转化为<strong>隔离的、自治的实现运行(implementation runs)</strong>，让团队从"监督AI编程"升级为"管理需要完成的工作"。简单来说：你在Linear（项目管理工具）上创建任务，Symphony自动接单、启动Codex Agent、完成编码、提交PR、提供CI状态和代码审查反馈，你只需要审批通过。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/symphony.jpg" alt="Symphony GitHub仓库">
+                        <p class="caption">▲ OpenAI Symphony：从"监督AI编程"到"管理工作"的范式转换</p>
+                    </div>
+                    
+                    <p>当前AI编程工具的瓶颈不在于AI能不能写代码，而在于<strong>协调和信任</strong>。开发者仍然需要逐个任务地启动Agent、观察进度、处理问题。Symphony的解决方案是将整个流程自动化：它监控Linear看板上的任务状态，为每个任务创建隔离的Codex Agent实例，Agent完成编码后自动提交PR并附带"工作证明"——CI通过状态、PR Review反馈、代码复杂度分析、甚至walkthrough视频。工程师只需要在看板上审批或拒绝。</p>
+                    
+                    <p>项目采用Elixir实现（OTP的并发能力天然适合编排多个Agent），但OpenAI明确表示这只是参考实现——他们甚至在README中鼓励你"用你喜欢的编程语言让AI按照SPEC.md重新实现一个Symphony"。这种"规范优先"的开源方式本身就很有深意。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>OpenAI官方对"AI编程工作流"的愿景——从手动启动Agent到全自动任务分配和交付。代表了"Harness Engineering（线束工程）"的下一步进化。虽然还在早期工程预览阶段，但作为OpenAI的官方项目，其方向性意义不可忽视。</p>
+                    </div>
+                    
+                    <p><strong>核心架构：</strong></p>
+                    <ul>
+                        <li><strong>Linear集成</strong> — 监控项目看板任务状态变化，自动触发Agent</li>
+                        <li><strong>隔离运行</strong> — 每个任务在独立的Codex Agent实例中执行，互不干扰</li>
+                        <li><strong>工作证明</strong> — 自动生成CI状态、PR Review、复杂度分析、walkthrough视频</li>
+                        <li><strong>安全着陆</strong> — Agent完成后由人类审批，通过后自动合并PR</li>
+                        <li><strong>规范驱动</strong> — SPEC.md完整描述架构，支持任意语言重新实现</li>
+                    </ul>
+                    
+                    <pre><code># 方式1：让AI帮你搭建
+# 告诉你的编程Agent：
+# "Implement Symphony according to the following spec:
+#  https://github.com/openai/symphony/blob/main/SPEC.md"
+
+# 方式2：使用Elixir参考实现
+git clone https://github.com/openai/symphony.git
+cd symphony/elixir
+# 参见 elixir/README.md 配置说明</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/openai/symphony" target="_blank">https://github.com/openai/symphony</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 5: agentscope-ai/CoPaw -->
+                <section id="copaw" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">CoPaw：全渠道个人AI助手，部署即用</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 13,479 Stars</span>
+                        <span class="stat">📈 指数 26.2</span>
+                        <span class="stat">🔧 Python</span>
+                    </div>
+                    
+                    <p><strong>CoPaw</strong>（Co-Paw，"协作之爪"）是由AgentScope团队开发的开源个人AI助手框架，定位是<strong>"懂你所想，伴你左右"</strong>。它的核心卖点是全渠道接入——一个助手实例可以同时连接钉钉、飞书、QQ、Discord、iMessage等多个聊天平台，在本地或云端部署，具备自定义技能、定时任务、多Agent协作等完整能力。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/copaw.jpg" alt="CoPaw GitHub仓库">
+                        <p class="caption">▲ CoPaw：开源全渠道个人AI助手框架</p>
+                    </div>
+                    
+                    <p>个人AI助手赛道正在变得拥挤，但CoPaw的差异化在于<strong>开放性和本地化</strong>。首先，它不绑定任何特定的LLM提供商，你可以用OpenAI、Claude、本地模型等任意后端。其次，它原生支持中国开发者生态——钉钉、飞书、QQ、企业微信等国内平台都有官方适配。第三，它是一个真正的多Agent系统——你可以创建多个独立Agent，每个有自己的专长，通过协作技能进行跨Agent通信。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/copaw-demo.jpg" alt="CoPaw 官网">
+                        <p class="caption">▲ CoPaw 官方文档站：几分钟安装配置即可使用</p>
+                    </div>
+                    
+                    <p>v0.2.0版本新增了Agent间通信、内置QA Agent、LLM自动重试、敏感路径文件访问守卫、音频/视频/语音输入、流式重连等功能。社区活跃度极高，从v0.0.4到v0.2.0仅用了不到一个月，贡献者超过30人。作为阿里巴巴AgentScope生态的重要项目，CoPaw代表了国内AI Agent领域的开源力量。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>国产开源的全渠道个人AI助手。不同于OpenClaw（偏极客/开发者）或Apple Intelligence（闭源生态），CoPaw走的是"开放平台+全渠道+多Agent"路线，特别适合需要同时管理多个国内通讯平台的用户。pip install三行命令即可启动。</p>
+                    </div>
+                    
+                    <p><strong>核心能力：</strong></p>
+                    <ul>
+                        <li><strong>全渠道接入</strong> — 钉钉、飞书、QQ、Discord、iMessage、企业微信，一个助手多平台在线</li>
+                        <li><strong>多Agent协作</strong> — 创建多个独立Agent，各有专长，跨Agent通信</li>
+                        <li><strong>自定义技能</strong> — 工作区内放置技能文件自动加载，无锁定</li>
+                        <li><strong>内置定时任务</strong> — cron式定时推送，新闻摘要/日报/提醒全自动</li>
+                        <li><strong>本地/云端部署</strong> — 数据在你自己手里，记忆和个性化完全可控</li>
+                    </ul>
+                    
+                    <pre><code># 快速安装
+pip install copaw
+copaw init --template
+copaw run
+
+# 或Docker部署
+docker pull agentscope/copaw:latest
+docker run -p 8080:8080 agentscope/copaw:latest</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/agentscope-ai/CoPaw" target="_blank">https://github.com/agentscope-ai/CoPaw</a>
+                    </div>
+                    <div class="project-link">
+                        <span>🌐 文档站：</span>
+                        <a href="https://copaw.agentscope.io/" target="_blank">https://copaw.agentscope.io/</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <p>📊 <strong>筛选标准：</strong>60天内创建 · Star≥100 · 新星指数（周增长/√总Star）排名Top 5</p>
+                    <p>🤖 <strong>数据采集：</strong>GitHub API + GitHub Trending · 2026年3月28日凌晨2:00 (CST)</p>
+                    <p><a href="../../">← 返回首页</a> · <a href="https://github.com/nicobailon/github-rising-stars">项目源码</a></p>
+                </footer>
+            </article>
+        </main>
+    </div>
+    
+    <script>
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const list = document.getElementById('history-list');
+                data.reports.slice(0, 20).forEach(r => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = `../${r.date}/`;
+                    a.className = 'nav-link';
+                    const isActive = r.date === '2026-03-28';
+                    if (isActive) a.classList.add('active');
+                    a.innerHTML = `<span class="nav-date">${r.date}</span><span class="nav-title">${r.title || r.date}</span>`;
+                    li.appendChild(a);
+                    list.appendChild(li);
+                });
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('.project-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            sections.forEach(s => observer.observe(s));
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>

@@ -1,6 +1,42 @@
 {
   "reports": [
     {
+      "date": "2026-03-28",
+      "title": "5个GitHub新星项目速报！last30days爆火、PUA逼AI干活、Symphony自治编程",
+      "projects": [
+        {
+          "name": "mvanhorn/last30days-skill",
+          "stars": 12315,
+          "index": 178.1,
+          "language": "Python"
+        },
+        {
+          "name": "microsoft/RustTraining",
+          "stars": 10604,
+          "index": 51.5,
+          "language": "Rust"
+        },
+        {
+          "name": "tanweai/pua",
+          "stars": 12819,
+          "index": 41.7,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openai/symphony",
+          "stars": 14134,
+          "index": 28.7,
+          "language": "Elixir"
+        },
+        {
+          "name": "agentscope-ai/CoPaw",
+          "stars": 13479,
+          "index": 26.2,
+          "language": "Python"
+        }
+      ]
+    },
+    {
       "date": "2026-03-27",
       "title": "5个GitHub新星项目速报！ClawTeam、MiniMax Skills等火爆开源",
       "projects": [
