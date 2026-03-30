@@ -1,6 +1,42 @@
 {
   "reports": [
     {
+      "date": "2026-03-30",
+      "title": "5个GitHub新星项目速报！Pretext无DOM排版、飞书CLI全能工具、FlipOff复古翻牌屏",
+      "projects": [
+        {
+          "name": "chenglou/pretext",
+          "stars": 11675,
+          "index": 74.0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "larksuite/cli",
+          "stars": 3154,
+          "index": 53.4,
+          "language": "Go"
+        },
+        {
+          "name": "HKUDS/OpenSpace",
+          "stars": 2482,
+          "index": 39.8,
+          "language": "Python"
+        },
+        {
+          "name": "magnum6actual/flipoff",
+          "stars": 2425,
+          "index": 39.1,
+          "language": "JavaScript"
+        },
+        {
+          "name": "elder-plinius/G0DM0D3",
+          "stars": 2010,
+          "index": 33.7,
+          "language": "TypeScript"
+        }
+      ]
+    },
+    {
       "date": "2026-03-28",
       "title": "5个GitHub新星项目速报！last30days爆火、PUA逼AI干活、Symphony自治编程",
       "projects": [
