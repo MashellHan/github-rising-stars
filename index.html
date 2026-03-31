@@ -156,8 +156,8 @@
                         <h3>📊 ${r.date}</h3>
                         <p class="date">${formatDate(r.date)}</p>
                         <div class="stats">
-                            <span class="stat">⭐ ${r.totalStars} Stars</span>
-                            <span class="stat">📈 最高指数 ${r.topIndex}</span>
+                            <span class="stat">⭐ ${r.totalStars ?? r.projects?.reduce((s,p) => s + (p.stars||0), 0) ?? 0} Stars</span>
+                            <span class="stat">📈 最高指数 ${r.topIndex ?? (r.projects?.length ? Math.max(...r.projects.map(p => p.index||0)) : 0)}</span>
                         </div>
                         <div class="projects">
                             ${r.projects.slice(0, 3).map(p => `
