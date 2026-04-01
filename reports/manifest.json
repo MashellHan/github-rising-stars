@@ -1,6 +1,42 @@
 {
   "reports": [
     {
+      "date": "2026-04-02",
+      "title": "5个GitHub新星项目速报！Claw-Code史上最快百万星、同事永生Skill等爆火开源",
+      "projects": [
+        {
+          "name": "instructkr/claw-code",
+          "stars": 111036,
+          "index": 333.2,
+          "language": "Rust"
+        },
+        {
+          "name": "sanbuphy/learn-coding-agent",
+          "stars": 10434,
+          "index": 102.1,
+          "language": "Docs"
+        },
+        {
+          "name": "openai/codex-plugin-cc",
+          "stars": 7925,
+          "index": 89.0,
+          "language": "JavaScript"
+        },
+        {
+          "name": "TheTom/turboquant_plus",
+          "stars": 4738,
+          "index": 68.8,
+          "language": "Python"
+        },
+        {
+          "name": "titanwings/colleague-skill",
+          "stars": 4586,
+          "index": 67.7,
+          "language": "Python"
+        }
+      ]
+    },
+    {
       "date": "2026-03-30",
       "title": "5个GitHub新星项目速报！Pretext无DOM排版、飞书CLI全能工具、FlipOff复古翻牌屏",
       "projects": [
