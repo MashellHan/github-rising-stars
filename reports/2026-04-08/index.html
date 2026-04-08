@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个GitHub新星项目速报 | GitHub新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🌟</span> Rising Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个GitHub新星项目速报！Career-Ops求职全自动、MemPalace AI记忆之宫、OpenClaude开源编程CLI</h1>
+                    <p class="meta">
+                        <a href="../../">GitHub新星速报</a> · 2026年4月8日 · 周三
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>每天凌晨，我会自动扫描GitHub Trending，筛选出<strong>60天内创建、增长最快的高潜力项目</strong>，计算"新星指数"（周增长/√总Star），为你发现下一个可能爆发的开源项目。</p>
+                    <p>今天发现了<strong>5个新星项目</strong>，涵盖AI求职、记忆系统、编程CLI、下一代CMS和代码可视化等热门领域。让我们一起来看看！</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Project 1: career-ops -->
+                <section id="career-ops" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">Career-Ops：Claude Code驱动的AI求职全自动流水线</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 19,331 Stars</span>
+                        <span class="stat">📈 指数 139.0</span>
+                        <span class="stat">🔧 JavaScript</span>
+                    </div>
+                    
+                    <p><strong>Career-Ops</strong> 是一个基于 Claude Code 构建的 AI 求职流水线系统，它将整个求职过程——从发现职位、评估匹配度、生成定制简历到跟踪进度——全部自动化。这不是一个"海投工具"，而是一个<strong>智能过滤器</strong>：帮你从数百个职位中精准筛选出真正值得投递的那几个。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/career-ops.jpg" alt="Career-Ops GitHub仓库">
+                        <p class="caption">▲ Career-Ops GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>项目作者 santifer 亲身使用这套系统评估了 <strong>740+ 个职位</strong>，生成了 <strong>100+ 份定制简历</strong>，最终成功拿下了 Head of Applied AI 的 offer。这不是一个玩具项目，而是经过真实求职战场检验的完整系统。</p>
+                    
+                    <p>Career-Ops 的核心理念是<strong>"Agent式求职"</strong>：Claude Code 通过 Playwright 自动导航招聘页面（支持 Greenhouse、Ashby、Lever 等 45+ 家公司），然后用 AI 推理（而非关键词匹配）评估你的简历与职位描述的匹配度，最后为每个职位量身定制 ATS 优化的 PDF 简历。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>将求职从"人工海投"升级为"AI精准制导"。系统采用 A-F 评分（10个加权维度），强烈建议不投递 4.0 分以下的职位——你的时间和招聘方的时间都很宝贵。</p>
+                    </div>
+                    
+                    <p><strong>核心功能：</strong></p>
+                    <ul>
+                        <li><strong>6模块深度评估</strong> — 角色摘要、简历匹配、级别策略、薪资调研、个性化定制、面试准备（STAR+R）</li>
+                        <li><strong>面试故事库</strong> — 跨评估积累 STAR+Reflection 故事，5-10 个核心故事应对所有行为面试问题</li>
+                        <li><strong>谈判脚本</strong> — 薪资谈判框架、地理折扣反驳、竞争 Offer 杠杆策略</li>
+                        <li><strong>ATS PDF 生成</strong> — 关键词注入的简历，Space Grotesk + DM Sans 设计</li>
+                        <li><strong>批量并行处理</strong> — 用 <code>claude -p</code> 子代理并行评估 10+ 个职位</li>
+                        <li><strong>终端仪表盘 TUI</strong> — 浏览、筛选、排序你的求职管线</li>
+                    </ul>
+                    
+                    <pre><code>git clone https://github.com/santifer/career-ops.git
+cd career-ops && npm install
+npx playwright install chromium
+npm run doctor  # 验证所有前置条件</code></pre>
+                    
+                    <p>值得注意的是，Career-Ops 采用<strong>"Human-in-the-Loop"</strong>设计——AI 评估和推荐，但最终决策和投递都由你来完成。系统永远不会自动提交申请，你始终拥有最终控制权。作者特别强调：前几次评估可能不够精准，因为系统还不了解你。你需要喂给它足够的上下文——简历、职业故事、优势劣势、偏好——它才会越来越懂你，就像培训一个新招聘经理一样。</p>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/santifer/career-ops" target="_blank">https://github.com/santifer/career-ops</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 2: mempalace -->
+                <section id="mempalace" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">MemPalace：史上最高分的AI记忆系统，完全免费</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 19,110 Stars</span>
+                        <span class="stat">📈 指数 138.0</span>
+                        <span class="stat">🔧 Python</span>
+                    </div>
+                    
+                    <p><strong>MemPalace</strong> 借鉴古希腊演说家的"记忆宫殿"技术，为 AI 对话构建了一个<strong>全量存储、结构化可导航</strong>的记忆系统。每一次对话——每个决策、每次调试、每场架构讨论——都不再随着会话结束而消失。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/mempalace.jpg" alt="MemPalace GitHub仓库">
+                        <p class="caption">▲ MemPalace GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>其他记忆系统的做法是让 AI 决定什么值得记住——提取出"用户偏好 Postgres"然后丢掉你解释<em>为什么</em>选择 Postgres 的那段对话。MemPalace 的思路完全不同：<strong>存储一切，然后让它可被找到</strong>。</p>
+                    
+                    <p>系统将对话组织成"翼"（按人和项目分类）、"厅"（按记忆类型分类）和"室"（具体的想法和概念）。不需要 AI 决定什么重要，你保留每一个字，结构化组织给你一张<strong>可导航的地图</strong>而不是一个扁平的搜索索引。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>LongMemEval 基准测试 96.6% R@5——史上最高分，零 API 调用，完全本地运行。在 M2 Ultra 上不到 5 分钟独立复现。</p>
+                    </div>
+                    
+                    <p><strong>核心功能：</strong></p>
+                    <ul>
+                        <li><strong>原始逐字存储</strong> — 不做摘要、不做提取，用 ChromaDB 存储原始对话</li>
+                        <li><strong>宫殿架构</strong> — Wings（翼）、Halls（厅）、Rooms（室）、Closets（柜）、Drawers（抽屉）五层结构</li>
+                        <li><strong>AAAK 压缩（实验性）</strong> — 有损缩写方言，任何 LLM 可读，无需解码器</li>
+                        <li><strong>MCP Server</strong> — 内置 MCP 服务器，Claude Desktop / VS Code 直接集成</li>
+                        <li><strong>完全本地</strong> — 不使用任何外部 API 或服务，数据不离开你的机器</li>
+                    </ul>
+                    
+                    <pre><code>git clone https://github.com/milla-jovovich/mempalace.git
+cd mempalace && pip install -e ".[all]"
+mempalace init --palace ./my-palace
+# MCP集成: mempalace mcp</code></pre>
+                    
+                    <p>项目发布后社区迅速发现了一些问题——作者坦诚回应：AAAK 模式目前得分 84.2%（低于原始模式的 96.6%），"30x无损压缩"说法被修正为"有损缩写"。这种<strong>开放透明的态度</strong>反而赢得了更多信任。项目仍在快速迭代中，已经修复了 ChromaDB 兼容性、shell 注入和 macOS ARM64 段错误等问题。</p>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/milla-jovovich/mempalace" target="_blank">https://github.com/milla-jovovich/mempalace</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 3: openclaude -->
+                <section id="openclaude" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">OpenClaude：一个CLI统一所有AI编程模型</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 19,192 Stars</span>
+                        <span class="stat">📈 指数 139.0</span>
+                        <span class="stat">🔧 TypeScript</span>
+                    </div>
+                    
+                    <p><strong>OpenClaude</strong> 是一个开源的编程代理 CLI，让你用一个终端界面统一使用 OpenAI、Gemini、GitHub Models、Codex、Ollama、DeepSeek 等几乎所有主流 AI 模型。它保留了 Claude Code 的工作流体验——提示、工具、代理、MCP、斜杠命令、流式输出——但<strong>后端模型随你切换</strong>。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/openclaude.jpg" alt="OpenClaude GitHub仓库">
+                        <p class="caption">▲ OpenClaude GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>对于那些喜欢 Claude Code 的交互体验但又不想被锁定在单一模型上的开发者来说，OpenClaude 提供了一个<strong>完美的中间地带</strong>。你可以在同一个 CLI 中切换不同的提供商配置文件（用 <code>/provider</code> 命令管理），享受一致的开发体验。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>终结"AI编程工具碎片化"。一个 CLI，所有模型。保存的提供商配置让切换模型像切换 Git 分支一样简单。</p>
+                    </div>
+                    
+                    <p><strong>核心功能：</strong></p>
+                    <ul>
+                        <li><strong>多提供商支持</strong> — OpenAI、Gemini、GitHub Models、Codex、Ollama、Atomic Chat 等</li>
+                        <li><strong>提供商配置文件</strong> — 用 <code>/provider</code> 保存和切换不同的模型配置</li>
+                        <li><strong>完整工具链</strong> — bash、文件工具、grep、glob、agents、tasks、MCP、web 工具</li>
+                        <li><strong>VS Code 扩展</strong> — 内置 VS Code 集成，支持启动和主题</li>
+                        <li><strong>Headless gRPC Server</strong> — 支持无头模式运行，方便集成到 CI/CD 管线</li>
+                        <li><strong>Agent Routing</strong> — 自动选择最佳模型路由复杂查询</li>
+                    </ul>
+                    
+                    <pre><code>npm install -g @gitlawb/openclaude
+openclaude
+# 输入 /provider 开始配置你的模型提供商</code></pre>
+                    
+                    <p>OpenClaude 特别适合<strong>企业团队</strong>：不同的项目可以使用不同的模型（预算敏感的用 GPT-4o-mini，需要极致推理的用 o1），但开发者只需要学习一套工具链。它还支持本地模型（Ollama），对于安全敏感的场景，代码不需要离开你的网络。</p>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/Gitlawb/openclaude" target="_blank">https://github.com/Gitlawb/openclaude</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 4: emdash -->
+                <section id="emdash" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">EmDash：TypeScript全栈CMS，WordPress的现代继承者</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 8,216 Stars</span>
+                        <span class="stat">📈 指数 91.0</span>
+                        <span class="stat">🔧 TypeScript</span>
+                    </div>
+                    
+                    <p><strong>EmDash</strong> 基于 Astro 和 Cloudflare 构建，是一个全栈 TypeScript CMS。它吸取了 WordPress 统治 CMS 领域 20 年的核心优势——可扩展性、管理后台 UX、插件生态——然后在无服务器（Serverless）和类型安全的基础上<strong>彻底重建</strong>。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/emdash.jpg" alt="EmDash GitHub仓库">
+                        <p class="caption">▲ EmDash GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>WordPress 最大的安全隐患来自插件：任何插件都能访问整个 PHP 运行时。EmDash 用 Cloudflare Worker Isolates 实现了<strong>沙箱化插件</strong>——每个插件都在隔离的 Worker 中运行，从根本上解决了 WordPress 插件架构的安全问题。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/emdash-demo.png" alt="EmDash Playground">
+                        <p class="caption">▲ EmDash Playground 在线演示——完整的管理后台体验</p>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>WordPress 的精神继承者，但用现代技术栈重写。没有 PHP，没有独立托管层——部署你的 Astro 站点即可。</p>
+                    </div>
+                    
+                    <p><strong>核心功能：</strong></p>
+                    <ul>
+                        <li><strong>三套起步模板</strong> — Blog（博客）、Marketing（营销落地页）、Portfolio（作品集）</li>
+                        <li><strong>沙箱化插件</strong> — Cloudflare Worker Isolates 隔离执行，安全无忧</li>
+                        <li><strong>内容 API</strong> — Astro Content Layer + REST/GraphQL API，灵活对接</li>
+                        <li><strong>多平台部署</strong> — Cloudflare（D1 + R2 + Workers）或任何支持 SQLite 的 Node.js 服务器</li>
+                        <li><strong>WordPress 导入</strong> — 一键导入 WordPress 的文章、页面、媒体和分类</li>
+                        <li><strong>AI Agent 集成</strong> — 内置 AI Agent 支持插件和主题开发</li>
+                    </ul>
+                    
+                    <pre><code>npm create emdash@latest
+# 或一键部署到 Cloudflare：
+# 访问 deploy.workers.cloudflare.com</code></pre>
+                    
+                    <p>EmDash 的 Playground 功能让你可以<strong>零成本体验完整的管理后台</strong>——不需要注册，不需要部署，直接在浏览器中试用。对于正在考虑从 WordPress 迁移的团队来说，EmDash 提供了一条清晰的升级路径：类型安全、Serverless、沙箱化插件、现代开发体验。</p>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/emdash-cms/emdash" target="_blank">https://github.com/emdash-cms/emdash</a>
+                    </div>
+                    <div class="project-link">
+                        <span>🌐 在线Demo：</span>
+                        <a href="https://emdashcms.com" target="_blank">https://emdashcms.com</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Project 5: graphify -->
+                <section id="graphify" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">Graphify：一条命令将代码库变成交互式知识图谱</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">⭐ 7,847 Stars</span>
+                        <span class="stat">📈 指数 89.0</span>
+                        <span class="stat">🔧 Python</span>
+                    </div>
+                    
+                    <p><strong>Graphify</strong> 是一个 AI 编程助手技能——在 Claude Code、Codex、OpenCode、OpenClaw 或 Factory Droid 中输入 <code>/graphify</code>，它就能读取你的文件，构建知识图谱，帮你发现代码库中隐藏的结构。</p>
+                    
+                    <div class="article-image">
+                        <img src="images/graphify.jpg" alt="Graphify GitHub仓库">
+                        <p class="caption">▲ Graphify GitHub 仓库截图</p>
+                    </div>
+                    
+                    <p>Graphify 的独特之处在于<strong>全模态支持</strong>：不仅能分析代码，还能处理 PDF、Markdown、截图、白板照片、甚至其他语言的图片。它用 Claude Vision 从所有输入中提取概念和关系，汇聚成一张统一的知识图谱。支持 19 种语言的 Tree-sitter AST 解析（Python、JS、TS、Go、Rust、Java、C、C++ 等）。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>Andrej Karpathy 风格的 <code>/raw</code> 文件夹——论文、推文、截图、笔记——graphify 让你能用 71.5 倍更少的 token 查询这些原始资料，且结果跨会话持久化。</p>
+                    </div>
+                    
+                    <p><strong>核心功能：</strong></p>
+                    <ul>
+                        <li><strong>两阶段分析</strong> — 第一阶段：确定性 AST 提取（无需 LLM）；第二阶段：Claude 子代理并行分析文档和图片</li>
+                        <li><strong>交互式 HTML 图谱</strong> — 点击节点、搜索、按社区过滤</li>
+                        <li><strong>Leiden 社区检测</strong> — 基于图拓扑的聚类，不需要嵌入向量</li>
+                        <li><strong>诚实标注</strong> — 每条关系标记为 EXTRACTED（直接发现）、INFERRED（推理得出，带置信度）或 AMBIGUOUS（需要审查）</li>
+                        <li><strong>SHA256 缓存</strong> — 重新运行只处理变更的文件</li>
+                        <li><strong>跨平台支持</strong> — Claude Code、Codex、OpenCode、OpenClaw、Factory Droid</li>
+                    </ul>
+                    
+                    <pre><code>pip install graphifyy && graphify install
+
+# 在 Claude Code / Codex / OpenClaw 中：
+/graphify .
+# Codex 用户：$graphify .</code></pre>
+                    
+                    <p>Graphify 的输出包括四个文件：交互式 HTML 图谱（点击节点探索关系）、纯文本报告（关键节点、意外连接、建议问题）、JSON 格式的持久化图谱（几周后仍可查询，无需重读文件）、以及 SHA256 缓存目录。特别适合<strong>代码审查、新员工 onboarding 和架构决策前的技术调研</strong>。</p>
+                    
+                    <div class="project-link">
+                        <span>📂 项目地址：</span>
+                        <a href="https://github.com/safishamsi/graphify" target="_blank">https://github.com/safishamsi/graphify</a>
+                    </div>
+                    <div class="project-link">
+                        <span>📦 PyPI：</span>
+                        <a href="https://pypi.org/project/graphifyy/" target="_blank">https://pypi.org/project/graphifyy/</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <p>以上就是今天的 GitHub 新星项目速报！每天扫描 Trending，为你发现最有潜力的新项目。</p>
+                    <p>🌟 <a href="../../">查看所有历史报告</a></p>
+                </footer>
+            </article>
+        </main>
+    </div>
+    
+    <script>
+        // 加载历史报告列表
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const list = document.getElementById('history-list');
+                data.reports.forEach(r => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = `../${r.date}/`;
+                    a.textContent = `${r.date} — ${r.title.substring(0, 30)}...`;
+                    if (r.date === '2026-04-08') a.classList.add('active');
+                    li.appendChild(a);
+                    list.appendChild(li);
+                });
+            } catch(e) {}
+        }
+        
+        // 滚动高亮
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('.project-section');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollY = window.scrollY;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+            });
+        }
+        
+        // 侧边栏控制
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>

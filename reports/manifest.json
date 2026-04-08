@@ -1,6 +1,42 @@
 {
   "reports": [
     {
+      "date": "2026-04-08",
+      "title": "5个GitHub新星项目速报！Career-Ops求职全自动、MemPalace AI记忆之宫、OpenClaude开源编程CLI",
+      "projects": [
+        {
+          "name": "santifer/career-ops",
+          "stars": 19331,
+          "index": 139.0,
+          "language": "JavaScript"
+        },
+        {
+          "name": "Gitlawb/openclaude",
+          "stars": 19192,
+          "index": 139.0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "milla-jovovich/mempalace",
+          "stars": 19110,
+          "index": 138.0,
+          "language": "Python"
+        },
+        {
+          "name": "emdash-cms/emdash",
+          "stars": 8216,
+          "index": 91.0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "safishamsi/graphify",
+          "stars": 7847,
+          "index": 89.0,
+          "language": "Python"
+        }
+      ]
+    },
+    {
       "date": "2026-04-02",
       "title": "5个GitHub新星项目速报！Claw-Code史上最快百万星、同事永生Skill等爆火开源",
       "projects": [
